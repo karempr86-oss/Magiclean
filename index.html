@@ -1,146 +1,265 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magic Clean - التنظيف السحري</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --main-color: #5A189A;
-            --main-light: #7B2FFF;
-            --bg-color: #F8F7FF;
-            --text-color: #222;
-            --card-bg: #FFFFFF;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Cairo', sans-serif;
-            background: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magic Clean - خدمات منزلية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-color: #5A189A; 
+      --main-light: #7B2FFF;
+      --bg-color: #F8F7FF;
+      --text-color: #222;
+      --card-bg: #FFFFFF;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* شريط المنيو */
-        header {
-            background: var(--main-color);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: 600;
-            font-size: 18px;
-        }
-        nav a:hover { color: #FFD700; }
+    /* Header */
+    header {
+      background: white;
+      padding: 12px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--main-color);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo span { color: var(--main-light); }
+    nav a { margin: 0 15px; text-decoration: none; color: #555; font-weight: 600; transition: 0.3s; }
+    nav a:hover { color: var(--main-color); }
+    .btn-book {
+      background: var(--main-color);
+      color: white;
+      padding: 10px 22px;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Cairo';
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s;
+    }
+    .btn-book:hover { background: var(--main-light); transform: translateY(-2px); }
 
-        /* البنر */
-        .hero { 
-            text-align: center; 
-            padding: 80px 20px; 
-            background: linear-gradient(135deg, var(--main-color), var(--main-light));
-            color: white;
-        }
-        .hero h1 { font-size: 36px; margin-bottom: 10px; }
-        .hero p { font-size: 18px; margin-bottom: 20px; }
-        .btn { 
-            background: #FFD700; 
-            color: var(--main-color); 
-            padding: 14px 35px; 
-            border-radius: 25px; 
-            text-decoration: none; 
-            display: inline-block; 
-            font-weight: 700;
-            font-size: 18px;
-        }
-        .btn:hover { background: white; }
+    /* Hero */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 0;
+      gap: 40px;
+    }
+    .hero-text { flex: 1; }
+    .hero-text h1 { font-size: 38px; margin-bottom: 15px; color: var(--main-color); }
+    .hero-text p { font-size: 18px; margin-bottom: 25px; color: #666; }
+    .hero-img { flex: 1; width: 50%; border-radius: 15px; display: block; }
 
-        /* الخدمات */
-        #services { padding: 60px 20px; }
-        #services h2 { text-align: center; color: var(--main-color); font-size: 28px; margin-bottom: 30px; }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .service-card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+      padding: 40px 0;
+    }
+    .feature-item .icon {
+      font-size: 32px;
+      color: var(--main-color);
+      margin-bottom: 8px;
+    }
+    .feature-item h3 { color: var(--main-color); margin: 10px 0 5px; font-size: 16px; }
+    .feature-item p { font-size: 14px; color: #666; }
 
-        /* الفوتر */
-        footer {
-            background: var(--main-color);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 50px;
-        }
-        footer h3 { margin-bottom: 15px; font-size: 22px; }
-        footer p { margin: 8px 0; }
-    </style>
+    /* Services */
+    .services { padding: 60px 0; }
+    .services h2 { text-align: center; font-size: 28px; margin-bottom: 40px; color: var(--main-color); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    .service-card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(90, 24, 154, 0.08);
+      transition: 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(90, 24, 154, 0.15);
+    }
+    .service-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      margin-bottom: 15px;
+    }
+    .service-card h3 { margin-bottom: 10px; color: var(--main-color); }
+    .service-link { text-decoration: none; color: inherit; }
+
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 25px 0;
+      margin-top: 50px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { flex-direction: column; }
+      .hero-img { width: 100%; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .features { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr; }
+      nav { display: none; }
+      .logo { font-size: 20px; }
+      .hero-text h1 { font-size: 28px; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- 1. المنيو -->
-    <header>
-        <nav class="container" style="text-align: center;">
-            <a href="#">الرئيسية</a>
-            <a href="#services">خدماتنا</a>
-            <a href="#contact">اتصل بنا</a>
-        </nav>
-    </header>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a href="test.html" class="logo">
+        Magic <span>Clean</span> <!-- رجعنا الكلمة نص -->
+      </a>
+      <nav>
+        <a href="test.html">الرئيسية</a>
+        <a href="#services">خدماتنا</a>
+        <a href="#">عن الشركة</a>
+        <a href="contact.html">اتصل بنا</a>
+      </nav>
+      <a href="booking.html" class="btn-book">📅 احجز الآن</a>
+    </div>
+  </header>
 
-    <!-- 2. البنر -->
-    <section class="hero">
-        <h1>التنظيف السحري</h1>
-        <p>راحتك تهمنا</p>
-        <a href="#contact" class="btn">احجز الآن 📅</a>
-    </section>
-
-    <!-- 3. الخدمات -->
-    <section class="container" id="services">
-        <h2>خدماتنا</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>🧹 تنظيف المنازل</h3>
-                <p>خدمة تنظيف شاملة باحترافية عالية</p>
-            </div>
-            <div class="service-card">
-                <h3>👨‍⚕️ تمريض منزلي</h3>
-                <p>رعاية صحية على يد متخصصين</p>
-            </div>
-            <div class="service-card">
-                <h3>👶 رعاية الأطفال</h3>
-                <p>جليسات مدربات وموثوق فيهم</p>
-            </div>
-            <div class="service-card">
-                <h3>👴 رعاية كبار السن</h3>
-                <p>اهتمام ورعاية 24 ساعة</p>
-            </div>
+  <!-- Hero Section -->
+  <section class="hero container">
+    <div class="hero-text">
+      <h1>راحتك تهمنا</h1>
+      <p>احصل على خدمات تنظيف وتمريض ورعاية احترافية في بيتك</p>
+      
+      <div class="features">
+        <div class="feature-item">
+          <div class="icon">⏰</div>
+          <h3>مرونة في المواعيد</h3>
+          <p>الوقت المناسب لك</p>
         </div>
-    </section>
-
-    <!-- 4. الفوتر - اتصل بنا -->
-    <footer id="contact">
-        <div class="container">
-            <h3>اتصل بنا</h3>
-            <p>📱 واتساب: 01032990659</p>
-            <p>📍 العنوان: القاهرة، مصر</p>
-            <p>⏰ مواعيد العمل: 9 صباحا - 10 مساء</p>
-            <hr style="margin: 20px 0; border-color: rgba(255,255,255,0.2);">
-            <p>© 2026 Magic Clean For Public Services. جميع الحقوق محفوظة</p>
+        <div class="feature-item">
+          <div class="icon">⭐</div>
+          <h3>جودة عالية</h3>
+          <p>افضل المعدات</p>
         </div>
-    </footer>
+        <div class="feature-item">
+          <div class="icon">🛡️</div>
+          <h3>موثوقون</h3>
+          <p>فريق عمل مدرب</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">💬</div>
+          <h3>دعم 24 ساعة</h3>
+          <p>نحن هنا لخدمتك</p>
+        </div>
+      </div>
+    </div>
+    <img src="banner.jpg" class="hero-img" alt="تنظيف">
+  </section>
+
+  <!-- Services Section -->
+  <section class="services container" id="services">
+    <h2>خدماتنا المميزة</h2>
+    <div class="services-grid">
+      
+      <a href="service-cleaning.html" class="service-link">
+        <div class="service-card">
+          <img src="service1.png" alt="تنظيف منازل">
+          <h3>تنظيف منازل</h3>
+          <p>تنظيف شامل لكل ركن في بيتك</p>
+        </div>
+      </a>
+
+      <a href="service-sofa.html" class="service-link">
+        <div class="service-card">
+          <img src="service2.png" alt="تنظيف انتريهات">
+          <h3>تنظيف انتريهات</h3>
+          <p>نرجع الانتريه جديد</p>
+        </div>
+      </a>
+
+      <a href="service-nursing.html" class="service-link">
+        <div class="service-card">
+          <img src="service3.png" alt="تمريض">
+          <h3>تمريض</h3>
+          <p>رعاية طبية في المنزل</p>
+        </div>
+      </a>
+
+      <a href="service-elderly.html" class="service-link">
+        <div class="service-card">
+          <img src="service4.png" alt="رعاية مسنين">
+          <h3>رعاية مسنين</h3>
+          <p>اهتمام ورعاية لكبار السن</p>
+        </div>
+      </a>
+
+      <a href="service-kids.html" class="service-link">
+        <div class="service-card">
+          <img src="service5.png" alt="رعاية اطفال">
+          <h3>رعاية اطفال</h3>
+          <p>امان ورعاية لاطفالك</p>
+        </div>
+      </a>
+
+      <a href="service-pest.html" class="service-link">
+        <div class="service-card">
+          <img src="service6.png" alt="مكافحة الحشرات">
+          <h3>مكافحة الحشرات</h3>
+          <p>تخلص نهائي من الحشرات</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Magic Clean For Public Services. جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
 
 </body>
 </html>
