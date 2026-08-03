@@ -35,18 +35,16 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-direction: row-reverse; /* عشان اللوجو يمين والقائمة شمال */
     }
     .logo {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 700;
-      color: var(--main-color);
+      color: var(--main-color); /* لون واحد بنفسجي */
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
-    .logo span { color: var(--main-light); }
-    nav a { margin: 0 15px; text-decoration: none; color: #555; font-weight: 600; transition: 0.3s; }
+    nav { display: flex; gap: 20px; }
+    nav a { text-decoration: none; color: #555; font-weight: 600; transition: 0.3s; }
     nav a:hover { color: var(--main-color); }
     .btn-book {
       background: var(--main-color);
@@ -58,7 +56,6 @@
       cursor: pointer;
       font-family: 'Cairo';
       text-decoration: none;
-      display: inline-block;
       transition: 0.3s;
     }
     .btn-book:hover { background: var(--main-light); transform: translateY(-2px); }
@@ -70,8 +67,9 @@
       justify-content: space-between;
       padding: 60px 0;
       gap: 40px;
+      flex-direction: row-reverse; /* الصورة شمال والنص يمين */
     }
-    .hero-text { flex: 1; }
+    .hero-text { flex: 1; text-align: right; }
     .hero-text h1 { font-size: 38px; margin-bottom: 15px; color: var(--main-color); }
     .hero-text p { font-size: 18px; margin-bottom: 25px; color: #666; }
     .hero-img { flex: 1; width: 50%; border-radius: 15px; display: block; }
@@ -135,15 +133,17 @@
     /* Responsive */
     @media (max-width: 900px) {
       .hero { flex-direction: column; }
+      .hero-text { text-align: center; }
       .hero-img { width: 100%; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .features { grid-template-columns: repeat(2, 1fr); }
+      .nav { flex-direction: column; gap: 15px; }
     }
     @media (max-width: 600px) {
       .services-grid { grid-template-columns: 1fr; }
       .features { grid-template-columns: 1fr; }
       nav { display: none; }
-      .logo { font-size: 20px; }
+      .logo { font-size: 22px; }
       .hero-text h1 { font-size: 28px; }
     }
   </style>
@@ -154,7 +154,7 @@
   <header>
     <div class="container nav">
       <a href="test.html" class="logo">
-        Magic <span>Clean</span> <!-- رجعنا الكلمة نص -->
+        Magic Clean <!-- لون واحد بنفسجي -->
       </a>
       <nav>
         <a href="test.html">الرئيسية</a>
@@ -202,55 +202,12 @@
   <section class="services container" id="services">
     <h2>خدماتنا المميزة</h2>
     <div class="services-grid">
-      
-      <a href="service-cleaning.html" class="service-link">
-        <div class="service-card">
-          <img src="service1.png" alt="تنظيف منازل">
-          <h3>تنظيف منازل</h3>
-          <p>تنظيف شامل لكل ركن في بيتك</p>
-        </div>
-      </a>
-
-      <a href="service-sofa.html" class="service-link">
-        <div class="service-card">
-          <img src="service2.png" alt="تنظيف انتريهات">
-          <h3>تنظيف انتريهات</h3>
-          <p>نرجع الانتريه جديد</p>
-        </div>
-      </a>
-
-      <a href="service-nursing.html" class="service-link">
-        <div class="service-card">
-          <img src="service3.png" alt="تمريض">
-          <h3>تمريض</h3>
-          <p>رعاية طبية في المنزل</p>
-        </div>
-      </a>
-
-      <a href="service-elderly.html" class="service-link">
-        <div class="service-card">
-          <img src="service4.png" alt="رعاية مسنين">
-          <h3>رعاية مسنين</h3>
-          <p>اهتمام ورعاية لكبار السن</p>
-        </div>
-      </a>
-
-      <a href="service-kids.html" class="service-link">
-        <div class="service-card">
-          <img src="service5.png" alt="رعاية اطفال">
-          <h3>رعاية اطفال</h3>
-          <p>امان ورعاية لاطفالك</p>
-        </div>
-      </a>
-
-      <a href="service-pest.html" class="service-link">
-        <div class="service-card">
-          <img src="service6.png" alt="مكافحة الحشرات">
-          <h3>مكافحة الحشرات</h3>
-          <p>تخلص نهائي من الحشرات</p>
-        </div>
-      </a>
-
+      <a href="service-cleaning.html" class="service-link"><div class="service-card"><img src="service1.png" alt=""><h3>تنظيف منازل</h3><p>تنظيف شامل لكل ركن في بيتك</p></div></a>
+      <a href="service-sofa.html" class="service-link"><div class="service-card"><img src="service2.png" alt=""><h3>تنظيف انتريهات</h3><p>نرجع الانتريه جديد</p></div></a>
+      <a href="service-nursing.html" class="service-link"><div class="service-card"><img src="service3.png" alt=""><h3>تمريض</h3><p>رعاية طبية في المنزل</p></div></a>
+      <a href="service-elderly.html" class="service-link"><div class="service-card"><img src="service4.png" alt=""><h3>رعاية مسنين</h3><p>اهتمام ورعاية لكبار السن</p></div></a>
+      <a href="service-kids.html" class="service-link"><div class="service-card"><img src="service5.png" alt=""><h3>رعاية اطفال</h3><p>امان ورعاية لاطفالك</p></div></a>
+      <a href="service-pest.html" class="service-link"><div class="service-card"><img src="service6.png" alt=""><h3>مكافحة الحشرات</h3><p>تخلص نهائي من الحشرات</p></div></a>
     </div>
   </section>
 
