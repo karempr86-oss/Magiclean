@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magic Clean - خدمات منزلية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-color: #5A189A; 
+      --main-light: #7B2FFF;
+      --bg-color: #F8F7FF;
+      --text-color: #222;
+      --card-bg: #FFFFFF;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header {
+      background: white;
+      padding: 12px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row-reverse; /* عشان اللوجو يمين والقائمة شمال */
+    }
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--main-color); /* لون واحد بنفسجي */
+      text-decoration: none;
+    }
+    nav { display: flex; gap: 20px; }
+    nav a { text-decoration: none; color: #555; font-weight: 600; transition: 0.3s; }
+    nav a:hover { color: var(--main-color); }
+    .btn-book {
+      background: var(--main-color);
+      color: white;
+      padding: 10px 22px;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Cairo';
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn-book:hover { background: var(--main-light); transform: translateY(-2px); }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 0;
+      gap: 40px;
+      flex-direction: row-reverse; /* الصورة شمال والنص يمين */
+    }
+    .hero-text { flex: 1; text-align: right; }
+    .hero-text h1 { font-size: 38px; margin-bottom: 15px; color: var(--main-color); }
+    .hero-text p { font-size: 18px; margin-bottom: 25px; color: #666; }
+    .hero-img { flex: 1; width: 50%; border-radius: 15px; display: block; }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+      padding: 40px 0;
+    }
+    .feature-item .icon {
+      font-size: 32px;
+      color: var(--main-color);
+      margin-bottom: 8px;
+    }
+    .feature-item h3 { color: var(--main-color); margin: 10px 0 5px; font-size: 16px; }
+    .feature-item p { font-size: 14px; color: #666; }
+
+    /* Services */
+    .services { padding: 60px 0; }
+    .services h2 { text-align: center; font-size: 28px; margin-bottom: 40px; color: var(--main-color); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    .service-card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(90, 24, 154, 0.08);
+      transition: 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(90, 24, 154, 0.15);
+    }
+    .service-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      margin-bottom: 15px;
+    }
+    .service-card h3 { margin-bottom: 10px; color: var(--main-color); }
+    .service-link { text-decoration: none; color: inherit; }
+
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 25px 0;
+      margin-top: 50px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { flex-direction: column; }
+      .hero-text { text-align: center; }
+      .hero-img { width: 100%; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .features { grid-template-columns: repeat(2, 1fr); }
+      .nav { flex-direction: column; gap: 15px; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr; }
+      nav { display: none; }
+      .logo { font-size: 22px; }
+      .hero-text h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a href="test.html" class="logo">
+        Magic Clean <!-- لون واحد بنفسجي -->
+      </a>
+      <nav>
+        <a href="test.html">الرئيسية</a>
+        <a href="#services">خدماتنا</a>
+        <a href="#">عن الشركة</a>
+        <a href="contact.html">اتصل بنا</a>
+      </nav>
+      <a href="booking.html" class="btn-book">📅 احجز الآن</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero container">
+    <div class="hero-text">
+      <h1>راحتك تهمنا</h1>
+      <p>احصل على خدمات تنظيف وتمريض ورعاية احترافية في بيتك</p>
+      
+      <div class="features">
+        <div class="feature-item">
+          <div class="icon">⏰</div>
+          <h3>مرونة في المواعيد</h3>
+          <p>الوقت المناسب لك</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">⭐</div>
+          <h3>جودة عالية</h3>
+          <p>افضل المعدات</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">🛡️</div>
+          <h3>موثوقون</h3>
+          <p>فريق عمل مدرب</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">💬</div>
+          <h3>دعم 24 ساعة</h3>
+          <p>نحن هنا لخدمتك</p>
+        </div>
+      </div>
+    </div>
+    <img src="banner.jpeg" class="hero-img" alt="تنظيف">
+  </section>
+
+  <!-- Services Section -->
+  <section class="services container" id="services">
+    <h2>خدماتنا المميزة</h2>
+    <div class="services-grid">
+      <a href="service-cleaning.html" class="service-link"><div class="service-card"><img src="service1.png" alt=""><h3>تنظيف منازل</h3><p>تنظيف شامل لكل ركن في بيتك</p></div></a>
+      <a href="service-sofa.html" class="service-link"><div class="service-card"><img src="service2.png" alt=""><h3>تنظيف انتريهات</h3><p>نرجع الانتريه جديد</p></div></a>
+      <a href="service-nursing.html" class="service-link"><div class="service-card"><img src="service3.png" alt=""><h3>تمريض</h3><p>رعاية طبية في المنزل</p></div></a>
+      <a href="service-elderly.html" class="service-link"><div class="service-card"><img src="service4.png" alt=""><h3>رعاية مسنين</h3><p>اهتمام ورعاية لكبار السن</p></div></a>
+      <a href="service-kids.html" class="service-link"><div class="service-card"><img src="service5.png" alt=""><h3>رعاية اطفال</h3><p>امان ورعاية لاطفالك</p></div></a>
+      <a href="service-pest.html" class="service-link"><div class="service-card"><img src="service6.png" alt=""><h3>مكافحة الحشرات</h3><p>تخلص نهائي من الحشرات</p></div></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Magic Clean For Public Services. جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+
+</body>
+</html>

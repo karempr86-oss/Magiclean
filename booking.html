@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>احجز الآن - Magic Clean</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --main-color: #7B2FFF; --bg-color: #F8F7FF; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Cairo', sans-serif; background: var(--bg-color); }
+    .container { max-width: 600px; margin: 50px auto; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    h1 { text-align: center; color: var(--main-color); margin-bottom: 30px; }
+    .form-group { margin-bottom: 20px; }
+    label { display: block; margin-bottom: 8px; font-weight: 600; color: #444; }
+    input, select, textarea {
+      width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 10px;
+      font-family: 'Cairo'; font-size: 15px;
+    }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--main-color); }
+    .btn-submit {
+      width: 100%; background: var(--main-color); color: white; padding: 15px;
+      border: none; border-radius: 12px; font-size: 18px; font-weight: 700;
+      cursor: pointer; font-family: 'Cairo';
+    }
+    .btn-submit:hover { opacity: 0.9; }
+    .success { display:none; text-align:center; color:green; margin-top:15px; font-weight:700; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📅 احجز خدمتك الآن</h1>
+    <form id="bookingForm">
+      <div class="form-group">
+        <label>الاسم</label>
+        <input type="text" id="name" placeholder="اكتب اسمك" required>
+      </div>
+
+      <div class="form-group">
+        <label>العنوان</label>
+        <textarea rows="3" id="address" placeholder="اكتب العنوان بالتفصيل" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>رقم الهاتف</label>
+        <input type="tel" id="phone" placeholder="01xxxxxxxxx" required>
+      </div>
+
+      <div class="form-group">
+        <label>نوع الخدمة</label>
+        <select id="service" required>
+          <option value="">اختر الخدمة</option>
+          <option>تنظيف منازل</option>
+          <option>تنظيف انتريهات</option>
+          <option>تمريض</option>
+          <option>رعاية مسنين</option>
+          <option>رعاية اطفال</option>
+          <option>مكافحة الحشرات</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn-submit">ارسال الطلب</button>
+      <p class="success" id="successMsg">تم ارسال طلبك بنجاح ✅</p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // حط التوكن والشات اي دي بتوعك هنا
+      let BOT_TOKEN = "8861222732:AAE-fMico_cH3E5cyWF8CsqaPlfoY-76N0c";
+      let CHAT_ID = "8892991994";
+      
+      let name = document.getElementById('name').value;
+      let address = document.getElementById('address').value;
+      let phone = document.getElementById('phone').value;
+      let service = document.getElementById('service').value;
+      
+      let message = `🔔 طلب حجز جديد من Magic Clean
+      
+الاسم: ${name}
+العنوان: ${address}
+رقم الهاتف: ${phone}
+الخدمة: ${service}`;
+      
+      let url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(message)}`;
+      
+      await fetch(url);
+      
+      document.getElementById('successMsg').style.display = 'block';
+      document.getElementById('bookingForm').reset();
+    });
+  </script>
+</body>
+</html>

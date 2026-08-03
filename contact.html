@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تواصل سريع - Magic Clean</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --main-color: #7B2FFF; --bg-color: #F8F7FF; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Cairo', sans-serif; background: var(--bg-color); display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    
+    .container { 
+      background: white; 
+      padding: 40px; 
+      border-radius: 20px; 
+      box-shadow: 0 4px 25px rgba(0,0,0,0.1); 
+      text-align: center; 
+      width: 90%;
+      max-width: 500px;
+    }
+    h1 { color: var(--main-color); margin-bottom: 10px; }
+    p { color: #666; margin-bottom: 30px; }
+
+    .phone-card {
+      background: #F8F7FF;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 0.3s;
+    }
+    .phone-card:hover { border-color: var(--main-color); }
+    .phone-card.active {
+      border-color: var(--main-color);
+      background: #EDE5FF; /* اللون البنفسجي */
+    }
+    .phone-number {
+      font-size: 22px;
+      font-weight: 700;
+      color: #333;
+      direction: ltr;
+      display: block;
+    }
+
+    .call-btn {
+      display: none;
+      margin-top: 15px;
+      background: var(--main-color);
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Cairo';
+      text-decoration: none;
+    }
+    .call-btn.show { display: inline-block; }
+
+    .back-btn {
+      margin-top: 30px;
+      color: var(--main-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📞 تواصل سريع</h1>
+    <p>اضغط على الرقم وبعدين اتصال</p>
+
+    <div class="phone-card" data-number="01141114089">
+      <span class="phone-number">01141114089</span>
+      <a href="tel:01141114089" class="call-btn">اتصال</a>
+    </div>
+
+    <div class="phone-card" data-number="01032990659">
+      <span class="phone-number">01032990659</span>
+      <a href="tel:01032990659" class="call-btn">اتصال</a>
+    </div>
+
+    <a href="test.html" class="back-btn">← الرجوع للصفحة الرئيسية</a>
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.phone-card');
+    
+    cards.forEach(card => {
+      card.addEventListener('click', function() {
+        // نشيل التحديد من الكل
+        cards.forEach(c => {
+          c.classList.remove('active');
+          c.querySelector('.call-btn').classList.remove('show');
+        });
+        
+        // نحدد اللي اتداس عليه بالبنفسجي ونظهر زرار الاتصال
+        this.classList.add('active');
+        this.querySelector('.call-btn').classList.add('show');
+      });
+    });
+  </script>
+</body>
+</html>

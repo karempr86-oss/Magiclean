@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تنظيف منازل - Magic Clean</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { 
+      --main-color: #7B2FFF; 
+      --bg-color: #F8F7FF; 
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Cairo', sans-serif; 
+      background: var(--bg-color); 
+      color: #222;
+    }
+    
+    /* Header */
+    header {
+      background: white;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { font-size: 24px; font-weight: 700; color: var(--main-color); text-decoration: none; }
+    nav a { margin: 0 15px; text-decoration: none; color: #555; font-weight: 600; }
+    nav a:hover { color: var(--main-color); }
+    .btn-book-header {
+      background: var(--main-color);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Cairo';
+      text-decoration: none;
+    }
+
+    /* Content */
+    .content { 
+      max-width: 900px; 
+      margin: 40px auto; 
+      padding: 30px; 
+      background: white; 
+      border-radius: 20px; 
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+    }
+    .service-img { 
+      width: 100%; 
+      height: 400px;
+      object-fit: cover;
+      border-radius: 15px; 
+      margin-bottom: 25px; 
+    }
+    h1 { 
+      color: var(--main-color); 
+      font-size: 32px; 
+      margin-bottom: 15px; 
+    }
+    .description {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 25px;
+    }
+    h2 { 
+      font-size: 22px; 
+      margin-top: 30px; 
+      margin-bottom: 15px; 
+      color: #333;
+    }
+    ul { 
+      list-style: none; 
+      padding: 0; 
+    }
+    ul li { 
+      padding: 12px 0; 
+      border-bottom: 1px solid #eee; 
+      font-size: 16px; 
+      display: flex;
+      align-items: center;
+    }
+    ul li:before { 
+      content: "✓"; 
+      color: white;
+      background: var(--main-color);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-left: 12px;
+      flex-shrink: 0;
+    }
+    .btn-book {
+      display: block;
+      width: 100%;
+      background: var(--main-color);
+      color: white;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Cairo';
+      text-align: center;
+      text-decoration: none;
+      margin-top: 30px;
+      transition: 0.3s;
+    }
+    .btn-book:hover { 
+      background: #6a1fd6;
+      transform: translateY(-2px);
+    }
+    .back { 
+      margin-top: 20px; 
+      display: block; 
+      text-align: center; 
+      color: #666; 
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .back:hover { color: var(--main-color); }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .content { margin: 20px; padding: 20px; }
+      .service-img { height: 250px; }
+      h1 { font-size: 26px; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a href="test.html" class="logo">Magic Clean</a>
+      <nav>
+        <a href="test.html">الرئيسية</a>
+        <a href="test.html#services">خدماتنا</a>
+        <a href="#">عن الشركة</a>
+        <a href="contact.html">اتصل بنا</a>
+      </nav>
+      <a href="booking.html" class="btn-book-header">📅 احجز الآن</a>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <div class="content">
+    <img src="service1.png" class="service-img" alt="تنظيف منازل">
+    
+    <h1>تنظيف منازل</h1>
+    <p class="description">
+      بنرجعلك بيتك جديد بلمسة احترافية. فريقنا مدرب على اعلى مستوى وبنستخدم احدث المعدات ومواد تنظيف امنة 100% على الاطفال والحيوانات الاليفة. بنوصل في المعاد وبنسيب المكان انضف مما كان.
+    </p>
+    
+    <h2>الخدمة بتشمل:</h2>
+    <ul>
+      <li>تنظيف الغرف والصالات بالمكنسة الكهربائية والمسح</li>
+      <li>تلميع الزجاج والمرايات والاثاث الخشبي</li>
+      <li>تنظيف وتعقيم المطبخ والحمامات بالكامل</li>
+      <li>ترتيب السراير وتغيير الملايات</li>
+      <li>ازالة الاتربة من الاماكن العالية والمخفيه</li>
+      <li>تعطير المنزل بعد الانتهاء</li>
+    </ul>
+    
+    <h2>مدة الخدمة</h2>
+    <p class="description">من 3 الى 5 ساعات حسب مساحة الشقة وعدد الغرف</p>
+
+    <h2>بنستخدم</h2>
+    <p class="description">معدات حديثة ومواد تنظيف مستوردة وامنة ومعتمدة من وزارة الصحة</p>
+
+    <a href="booking.html" class="btn-book">📅 احجز الخدمة دي الآن</a>
+    <a href="test.html#services" class="back">← الرجوع لكل الخدمات</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Magic Clean. جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+
+</body>
+</html>
