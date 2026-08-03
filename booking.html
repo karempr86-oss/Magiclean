@@ -71,8 +71,9 @@
                 <option value="رعاية كبار السن">رعاية كبار السن</option>
             </select>
 
-            <label for="date">التاريخ والوقت</label>
-            <input type="datetime-local" id="date" required>
+            <!-- شلنا التاريخ وحطينا العنوان -->
+            <label for="address">العنوان</label>
+            <input type="text" id="address" placeholder="مثال: شبرا الخيمة، شارع 15" required>
 
             <button type="submit">تأكيد الحجز</button>
         </form>
@@ -81,39 +82,37 @@
 
 <script>
 async function sendToTelegram(event) {
-    event.preventDefault(); // يمنع اعادة تحميل الصفحة
+    event.preventDefault();
 
     // 1. جيب البيانات من الفورم
     const name = document.getElementById("name").value;
     const phone = document.getElementById("phone").value;
     const service = document.getElementById("service").value;
-    const date = document.getElementById("date").value;
+    const address = document.getElementById("address").value; // غيرنا من date ل address
 
     const message = `📢 حجز جديد من Magic Clean
--------------------------
+
 الاسم: ${name}
 الرقم: ${phone}
 الخدمة: ${service}
-التاريخ: ${date}`;
+العنوان: ${address}`; // ضفنا العنوان في الرسالة
 
     // 2. حط هنا بيانات البوتين بتوعك
-    const bot1_token = "8797593982:AAFpD7NjfaaIF92kwnE6Ft3muiq8pafRG2k";
-    const chat1_id = "8235372001";
-    const bot2_token = "8861222732:AAE-fMico_cH3E5cyWF8CsqaPlfoY-76N0c";
-    const chat2_id = "8892991994";
+    const bot1_token = "8861222732:AAE-fMico_cH3E5cyWF8CsqaPlfoY-76N0c";
+    const chat1_id = "8892991994";
+    const bot2_token = "8797593982:AAFpD7NjfaaIF92kwnE6Ft3muiq8pafRG2k";
+    const chat2_id = "8235372001";
 
     const url1 = `https://api.telegram.org/bot${bot1_token}/sendMessage`;
     const url2 = `https://api.telegram.org/bot${bot2_token}/sendMessage`;
 
     try {
-        // 3. ابعت للبوت الاول
         await fetch(url1, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({chat_id: chat1_id, text: message})
         });
 
-        // 4. ابعت للبوت التاني
         await fetch(url2, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
@@ -121,7 +120,7 @@ async function sendToTelegram(event) {
         });
 
         alert("تم ارسال الحجز بنجاح ✅");
-        document.getElementById("bookingForm").reset(); // يفضي الفورم
+        document.getElementById("bookingForm").reset();
 
     } catch (error) {
         alert("حصل خطأ في الارسال. اتاكد من النت");
