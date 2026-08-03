@@ -65,13 +65,13 @@
             <label for="service">اختر الخدمة</label>
             <select id="service" required>
                 <option value="">-- اختر --</option>
-                <option value="تنظيف المنازل">تنظيف المنازل</option>
-                <option value="تمريض منزلي">تمريض منزلي</option>
-                <option value="رعاية اطفال">رعاية اطفال</option>
-                <option value="رعاية كبار السن">رعاية كبار السن</option>
+                <option value="تنظيف منازل">تنظيف منازل</option>
+                <option value="رعايه اطفال">رعايه اطفال</option>
+                <option value="تمريض">تمريض</option>
+                <option value="رعايه مسنين">رعايه مسنين</option>
+                <option value="مكافحه الحشرات">مكافحه الحشرات</option>
             </select>
 
-            <!-- شلنا التاريخ وحطينا العنوان -->
             <label for="address">العنوان</label>
             <input type="text" id="address" placeholder="مثال: شبرا الخيمة، شارع 15" required>
 
@@ -84,20 +84,18 @@
 async function sendToTelegram(event) {
     event.preventDefault();
 
-    // 1. جيب البيانات من الفورم
     const name = document.getElementById("name").value;
     const phone = document.getElementById("phone").value;
     const service = document.getElementById("service").value;
-    const address = document.getElementById("address").value; // غيرنا من date ل address
+    const address = document.getElementById("address").value;
 
     const message = `📢 حجز جديد من Magic Clean
 
 الاسم: ${name}
 الرقم: ${phone}
 الخدمة: ${service}
-العنوان: ${address}`; // ضفنا العنوان في الرسالة
+العنوان: ${address}`;
 
-    // 2. حط هنا بيانات البوتين بتوعك
     const bot1_token = "8861222732:AAE-fMico_cH3E5cyWF8CsqaPlfoY-76N0c";
     const chat1_id = "8892991994";
     const bot2_token = "8797593982:AAFpD7NjfaaIF92kwnE6Ft3muiq8pafRG2k";
