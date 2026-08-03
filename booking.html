@@ -1,96 +1,134 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>احجز الآن - Magic Clean</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --main-color: #7B2FFF; --bg-color: #F8F7FF; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Cairo', sans-serif; background: var(--bg-color); }
-    .container { max-width: 600px; margin: 50px auto; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-    h1 { text-align: center; color: var(--main-color); margin-bottom: 30px; }
-    .form-group { margin-bottom: 20px; }
-    label { display: block; margin-bottom: 8px; font-weight: 600; color: #444; }
-    input, select, textarea {
-      width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 10px;
-      font-family: 'Cairo'; font-size: 15px;
-    }
-    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--main-color); }
-    .btn-submit {
-      width: 100%; background: var(--main-color); color: white; padding: 15px;
-      border: none; border-radius: 12px; font-size: 18px; font-weight: 700;
-      cursor: pointer; font-family: 'Cairo';
-    }
-    .btn-submit:hover { opacity: 0.9; }
-    .success { display:none; text-align:center; color:green; margin-top:15px; font-weight:700; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>احجز الآن - ماجيك كلين</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --الرئيسي: #5A189A; --الخلفية: #F8F7FF; }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--الخلفية);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .حاوية {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(90,24,154,0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 { color: var(--الرئيسي); text-align: center; margin-bottom: 20px; }
+        label { font-weight: 600; display: block; margin-top: 15px; margin-bottom: 5px; }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'Cairo', sans-serif;
+        }
+        button {
+            width: 100%;
+            background: var(--الرئيسي);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 25px;
+            cursor: pointer;
+        }
+        button:hover { background: #7B2FFF; }
+        .رجوع { display: block; text-align: center; margin-top: 15px; color: var(--الرئيسي); text-decoration: none; }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>📅 احجز خدمتك الآن</h1>
-    <form id="bookingForm">
-      <div class="form-group">
-        <label>الاسم</label>
-        <input type="text" id="name" placeholder="اكتب اسمك" required>
-      </div>
+    <div class="حاوية">
+        <h1>📝 نموذج الحجز</h1>
+        <form id="bookingForm" onsubmit="sendToTelegram(event)">
+            
+            <label for="name">الاسم الكامل</label>
+            <input type="text" id="name" required>
 
-      <div class="form-group">
-        <label>العنوان</label>
-        <textarea rows="3" id="address" placeholder="اكتب العنوان بالتفصيل" required></textarea>
-      </div>
+            <label for="phone">رقم الهاتف</label>
+            <input type="tel" id="phone" required>
 
-      <div class="form-group">
-        <label>رقم الهاتف</label>
-        <input type="tel" id="phone" placeholder="01xxxxxxxxx" required>
-      </div>
+            <label for="service">اختر الخدمة</label>
+            <select id="service" required>
+                <option value="">-- اختر --</option>
+                <option value="تنظيف المنازل">تنظيف المنازل</option>
+                <option value="تمريض منزلي">تمريض منزلي</option>
+                <option value="رعاية اطفال">رعاية اطفال</option>
+                <option value="رعاية كبار السن">رعاية كبار السن</option>
+            </select>
 
-      <div class="form-group">
-        <label>نوع الخدمة</label>
-        <select id="service" required>
-          <option value="">اختر الخدمة</option>
-          <option>تنظيف منازل</option>
-          <option>تنظيف انتريهات</option>
-          <option>تمريض</option>
-          <option>رعاية مسنين</option>
-          <option>رعاية اطفال</option>
-          <option>مكافحة الحشرات</option>
-        </select>
-      </div>
+            <label for="date">التاريخ والوقت</label>
+            <input type="datetime-local" id="date" required>
 
-      <button type="submit" class="btn-submit">ارسال الطلب</button>
-      <p class="success" id="successMsg">تم ارسال طلبك بنجاح ✅</p>
-    </form>
-  </div>
+            <button type="submit">تأكيد الحجز</button>
+        </form>
+        <a href="index.html" class="رجوع">← الرجوع للصفحة الرئيسية</a>
+    </div>
 
-  <script>
-    document.getElementById('bookingForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      // حط التوكن والشات اي دي بتوعك هنا
-      let BOT_TOKEN = "8861222732:AAE-fMico_cH3E5cyWF8CsqaPlfoY-76N0c";
-      let CHAT_ID = "8892991994";
-      
-      let name = document.getElementById('name').value;
-      let address = document.getElementById('address').value;
-      let phone = document.getElementById('phone').value;
-      let service = document.getElementById('service').value;
-      
-      let message = `🔔 طلب حجز جديد من Magic Clean
-      
+<script>
+async function sendToTelegram(event) {
+    event.preventDefault(); // يمنع اعادة تحميل الصفحة
+
+    // 1. جيب البيانات من الفورم
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const service = document.getElementById("service").value;
+    const date = document.getElementById("date").value;
+
+    const message = `📢 حجز جديد من Magic Clean
+-------------------------
 الاسم: ${name}
-العنوان: ${address}
-رقم الهاتف: ${phone}
-الخدمة: ${service}`;
-      
-      let url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(message)}`;
-      
-      await fetch(url);
-      
-      document.getElementById('successMsg').style.display = 'block';
-      document.getElementById('bookingForm').reset();
-    });
-  </script>
+الرقم: ${phone}
+الخدمة: ${service}
+التاريخ: ${date}`;
+
+    // 2. حط هنا بيانات البوتين بتوعك
+    const bot1_token = "8797593982:AAFpD7NjfaaIF92kwnE6Ft3muiq8pafRG2k";
+    const chat1_id = "8235372001";
+    const bot2_token = "8861222732:AAE-fMico_cH3E5cyWF8CsqaPlfoY-76N0c";
+    const chat2_id = "8892991994";
+
+    const url1 = `https://api.telegram.org/bot${bot1_token}/sendMessage`;
+    const url2 = `https://api.telegram.org/bot${bot2_token}/sendMessage`;
+
+    try {
+        // 3. ابعت للبوت الاول
+        await fetch(url1, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({chat_id: chat1_id, text: message})
+        });
+
+        // 4. ابعت للبوت التاني
+        await fetch(url2, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({chat_id: chat2_id, text: message})
+        });
+
+        alert("تم ارسال الحجز بنجاح ✅");
+        document.getElementById("bookingForm").reset(); // يفضي الفورم
+
+    } catch (error) {
+        alert("حصل خطأ في الارسال. اتاكد من النت");
+        console.log(error);
+    }
+}
+</script>
+
 </body>
 </html>
