@@ -3,31 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Magic Clean - شركة تنظيف منازل في القاهرة | تمريض ورعاية</title>
+  <meta name="description" content="تقدم خدمات تنظيف المنازل والانتريهات، التمريض، رعاية المسنين والأطفال، ومكافحة الحشرات بجودة عالية، سرعة، وأسعار مناسبة.">
+  <title>Magic Clean - خدمات منزلية</title>
   
-  <!-- SEO عشان يظهر في جوجل زي الصورة -->
-  <meta name="description" content="Magic Clean افضل شركة تنظيف منازل وتمريض ورعاية اطفال وكبار سن في القاهرة. فريق محترف، اسعار مناسبة، وحجز اونلاين. احجز الان">
-  <meta name="keywords" content="تنظيف منازل القاهرة, شركة تنظيف, تمريض منزلي, رعاية اطفال, مكافحة حشرات">
-  <link rel="icon" href="logo.png" type="image/png">
+  <base href="/Magiclean/">
   
-  <!-- بيانات للموقع عشان جوجل يفهمه -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Magic Clean",
-    "description": "خدمات منزلية احترافية في القاهرة - تنظيف وتمريض ورعاية",
-    "url": "https://karempr.github.io/Magiclean/",
-    "telephone": "01000000",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "القاهرة",
-      "addressCountry": "EG"
-    },
-    "image": "https://karempr.github.io/Magiclean/banner.jpg"
-  }
-  </script>
-
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -59,12 +39,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-direction: row-reverse;
+      flex-direction: row-reverse; /* عشان اللوجو يمين والقائمة شمال */
     }
     .logo {
       font-size: 26px;
       font-weight: 700;
-      color: var(--main-color);
+      color: var(--main-color); /* لون واحد بنفسجي */
       text-decoration: none;
     }
     nav { display: flex; gap: 20px; }
@@ -91,7 +71,7 @@
       justify-content: space-between;
       padding: 60px 0;
       gap: 40px;
-      flex-direction: row-reverse;
+      flex-direction: row-reverse; /* الصورة شمال والنص يمين */
     }
     .hero-text { flex: 1; text-align: right; }
     .hero-text h1 { font-size: 38px; margin-bottom: 15px; color: var(--main-color); }
@@ -177,11 +157,11 @@
   <!-- Header -->
   <header>
     <div class="container nav">
-      <a href="test.html" class="logo">
-        Magic Clean
+      <a href="index.html" class="logo">
+        Magic Clean <!-- لون واحد بنفسجي -->
       </a>
       <nav>
-        <a href="test.html">الرئيسية</a>
+        <a href="index.html">الرئيسية</a>
         <a href="#services">خدماتنا</a>
         <a href="#">عن الشركة</a>
         <a href="contact.html">اتصل بنا</a>
@@ -195,6 +175,8 @@
     <div class="hero-text">
       <h1>راحتك تهمنا</h1>
       <p>احصل على خدمات تنظيف وتمريض ورعاية احترافية في بيتك</p>
+      <!-- الوصف الجديد اتضاف هنا -->
+      <p style="font-size: 16px; color: #444; margin-bottom: 30px;">تقدم خدمات تنظيف المنازل والانتريهات، التمريض، رعاية المسنين والأطفال، ومكافحة الحشرات بجودة عالية، سرعة، وأسعار مناسبة.</p>
       
       <div class="features">
         <div class="feature-item">
