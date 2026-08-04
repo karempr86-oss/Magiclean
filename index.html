@@ -61,44 +61,57 @@
       font-family: 'Cairo';
       text-decoration: none;
       transition: 0.3s;
+      display: inline-block;
     }
     .btn-book:hover { background: var(--main-light); transform: translateY(-2px); }
 
-    /* Hero */
+    /* Hero with Background Image */
     .hero {
+      background: url('hero-bg.jpeg') no-repeat center center/cover;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255, 255, 255, 0.88); /* طبقة بيضا عشان الكلام يبان */
+      z-index: 0;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 1;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 60px 0;
       gap: 40px;
       flex-direction: row-reverse;
+      padding: 90px 20px;
     }
     .hero-text { flex: 1; text-align: right; }
-    .hero-text h1 { font-size: 38px; margin-bottom: 15px; color: var(--main-color); }
-    .hero-text p { font-size: 18px; margin-bottom: 15px; color: #666; }
-    .hero-img { flex: 1; width: 50%; border-radius: 15px; display: block; }
+    .hero-text h1 { font-size: 40px; margin-bottom: 15px; color: var(--main-color); }
+    .hero-text p { font-size: 18px; margin-bottom: 15px; color: #555; }
 
-    /* Features - نقلتها تحت */
+    /* Features */
     .features {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 25px;
       text-align: center;
-      padding: 60px 0;
+      padding: 70px 20px;
       background: white;
     }
-    .features h2 { grid-column: 1 / -1; font-size: 28px; color: var(--main-color); margin-bottom: 30px; }
+    .features h2 { grid-column: 1 / -1; font-size: 30px; color: var(--main-color); margin-bottom: 30px; }
     .feature-item .icon {
-      font-size: 32px;
+      font-size: 36px;
       color: var(--main-color);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
-    .feature-item h3 { color: var(--main-color); margin: 10px 0 5px; font-size: 16px; }
+    .feature-item h3 { color: var(--main-color); margin: 10px 0 5px; font-size: 17px; }
     .feature-item p { font-size: 14px; color: #666; }
 
     /* Services */
-    .services { padding: 60px 0; }
-    .services h2 { text-align: center; font-size: 28px; margin-bottom: 40px; color: var(--main-color); }
+    .services { padding: 70px 20px; }
+    .services h2 { text-align: center; font-size: 30px; margin-bottom: 40px; color: var(--main-color); }
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -138,9 +151,8 @@
 
     /* Responsive */
     @media (max-width: 900px) {
-      .hero { flex-direction: column; }
+      .hero .container { flex-direction: column; padding: 60px 20px; }
       .hero-text { text-align: center; }
-      .hero-img { width: 100%; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .features { grid-template-columns: repeat(2, 1fr); }
       .nav { flex-direction: column; gap: 15px; }
@@ -150,7 +162,7 @@
       .features { grid-template-columns: 1fr; }
       nav { display: none; }
       .logo { font-size: 22px; }
-      .hero-text h1 { font-size: 28px; }
+      .hero-text h1 { font-size: 30px; }
     }
   </style>
 </head>
@@ -172,18 +184,19 @@
     </div>
   </header>
 
-  <!-- 1. Hero Section - البانر فوق -->
-  <section class="hero container">
-    <div class="hero-text">
-      <h1>راحتك تهمنا</h1>
-      <p>احصل على خدمات تنظيف وتمريض ورعاية احترافية في بيتك</p>
-      <p style="font-size: 16px; color: #444; margin-bottom: 25px;">تقدم خدمات تنظيف المنازل والانتريهات، التمريض، رعاية المسنين والأطفال، ومكافحة الحشرات بجودة عالية، سرعة، وأسعار مناسبة.</p>
-      <a href="booking.html" class="btn-book">احجز الآن</a>
+  <!-- 1. Hero Section - البانر بالصورة الجديدة -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-text">
+        <h1>راحتك تهمنا</h1>
+        <p>احصل على خدمات تنظيف وتمريض ورعاية احترافية في بيتك</p>
+        <p style="font-size: 16px; color: #444; margin-bottom: 25px;">تقدم خدمات تنظيف المنازل والانتريهات، التمريض، رعاية المسنين والأطفال، ومكافحة الحشرات بجودة عالية، سرعة، وأسعار مناسبة.</p>
+        <a href="booking.html" class="btn-book">احجز الآن</a>
+      </div>
     </div>
-    <img src="banner.jpeg" class="hero-img" alt="تنظيف">
   </section>
 
-  <!-- 2. Services Section - الخدمات في النص -->
+  <!-- 2. Services Section -->
   <section class="services container" id="services">
     <h2>خدماتنا المميزة</h2>
     <div class="services-grid">
@@ -196,7 +209,7 @@
     </div>
   </section>
 
-  <!-- 3. Features Section - المميزات تحت -->
+  <!-- 3. Features Section -->
   <section class="features container">
     <h2>لماذا تختار Magic Clean</h2>
     <div class="feature-item">
