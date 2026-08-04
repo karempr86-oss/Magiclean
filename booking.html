@@ -6,7 +6,7 @@
     <title>احجز الآن - ماجيك كلين</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --الرئيسي: #5A189A; --الخلفية: #F8F7FF; }
+        :root { --الرئيسي: #5A189A; --الخلفية: #F8F7FF; --اخضر: #25D366; }
         body {
             font-family: 'Cairo', sans-serif;
             background: var(--الخلفية);
@@ -25,7 +25,25 @@
             max-width: 600px;
             width: 100%;
         }
-        h1 { color: var(--الرئيسي); text-align: center; margin-bottom: 20px; }
+        h1 { color: var(--الرئيسي); text-align: center; margin-bottom: 15px; }
+        
+        /* زرار الاتصال السريع */
+        .اتصال-سريع {
+            display: block;
+            width: 100%;
+            background: var(--اخضر);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+        .اتصال-سريع:hover { background: #1DA851; }
+
         label { font-weight: 600; display: block; margin-top: 15px; margin-bottom: 5px; }
         input, select {
             width: 100%;
@@ -53,7 +71,11 @@
 </head>
 <body>
     <div class="حاوية">
-        <h1>📝 نموذج الحجز</h1>
+        <h1>احجز  لان</h1>
+
+        <!-- زرار الاتصال السريع -->
+        <a href="tel:01032990659" class="اتصال-سريع">📞 اتصال سريع: 01032990659</a>
+
         <form id="bookingForm" onsubmit="sendToTelegram(event)">
             
             <label for="name">الاسم الكامل</label>
@@ -69,7 +91,7 @@
                 <option value="رعايه اطفال">رعايه اطفال</option>
                 <option value="تمريض">تمريض</option>
                 <option value="رعايه مسنين">رعايه مسنين</option>
-                <option value="مكافحه الحشرات">مكافحه الحشرات</option>
+                <option value="🪳مكافحه الحشرات🪳">مكافحه الحشرات</option>
             </select>
 
             <label for="address">العنوان</label>
@@ -96,10 +118,10 @@ async function sendToTelegram(event) {
 الخدمة: ${service}
 العنوان: ${address}`;
 
-    const bot1_token = "8861222732:AAE-fMico_cH3E5cyWF8CsqaPlfoY-76N0c";
-    const chat1_id = "8892991994";
-    const bot2_token = "8797593982:AAFpD7NjfaaIF92kwnE6Ft3muiq8pafRG2k";
-    const chat2_id = "8235372001";
+    const bot1_token = "8797593982:AAFpD7NjfaaIF92kwnE6Ft3muiq8pafRG2k";
+    const chat1_id = "8235372001";
+    const bot2_token = "8861222732:AAE-fMico_cH3E5cyWF8CsqaPlfoY-76N0c";
+    const chat2_id = "8892991994";
 
     const url1 = `https://api.telegram.org/bot${bot1_token}/sendMessage`;
     const url2 = `https://api.telegram.org/bot${bot2_token}/sendMessage`;
