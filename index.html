@@ -39,12 +39,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-direction: row-reverse; /* عشان اللوجو يمين والقائمة شمال */
+      flex-direction: row-reverse;
     }
     .logo {
       font-size: 26px;
       font-weight: 700;
-      color: var(--main-color); /* لون واحد بنفسجي */
+      color: var(--main-color);
       text-decoration: none;
     }
     nav { display: flex; gap: 20px; }
@@ -71,21 +71,23 @@
       justify-content: space-between;
       padding: 60px 0;
       gap: 40px;
-      flex-direction: row-reverse; /* الصورة شمال والنص يمين */
+      flex-direction: row-reverse;
     }
     .hero-text { flex: 1; text-align: right; }
     .hero-text h1 { font-size: 38px; margin-bottom: 15px; color: var(--main-color); }
-    .hero-text p { font-size: 18px; margin-bottom: 25px; color: #666; }
+    .hero-text p { font-size: 18px; margin-bottom: 15px; color: #666; }
     .hero-img { flex: 1; width: 50%; border-radius: 15px; display: block; }
 
-    /* Features */
+    /* Features - نقلتها تحت */
     .features {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
       text-align: center;
-      padding: 40px 0;
+      padding: 60px 0;
+      background: white;
     }
+    .features h2 { grid-column: 1 / -1; font-size: 28px; color: var(--main-color); margin-bottom: 30px; }
     .feature-item .icon {
       font-size: 32px;
       color: var(--main-color);
@@ -158,7 +160,7 @@
   <header>
     <div class="container nav">
       <a href="index.html" class="logo">
-        Magic Clean <!-- لون واحد بنفسجي -->
+        Magic Clean
       </a>
       <nav>
         <a href="index.html">الرئيسية</a>
@@ -170,41 +172,18 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- 1. Hero Section - البانر فوق -->
   <section class="hero container">
     <div class="hero-text">
       <h1>راحتك تهمنا</h1>
       <p>احصل على خدمات تنظيف وتمريض ورعاية احترافية في بيتك</p>
-      <!-- الوصف الجديد اتضاف هنا -->
-      <p style="font-size: 16px; color: #444; margin-bottom: 30px;">تقدم خدمات تنظيف المنازل والانتريهات، التمريض، رعاية المسنين والأطفال، ومكافحة الحشرات بجودة عالية، سرعة، وأسعار مناسبة.</p>
-      
-      <div class="features">
-        <div class="feature-item">
-          <div class="icon">⏰</div>
-          <h3>مرونة في المواعيد</h3>
-          <p>الوقت المناسب لك</p>
-        </div>
-        <div class="feature-item">
-          <div class="icon">⭐</div>
-          <h3>جودة عالية</h3>
-          <p>افضل المعدات</p>
-        </div>
-        <div class="feature-item">
-          <div class="icon">🛡️</div>
-          <h3>موثوقون</h3>
-          <p>فريق عمل مدرب</p>
-        </div>
-        <div class="feature-item">
-          <div class="icon">💬</div>
-          <h3>دعم 24 ساعة</h3>
-          <p>نحن هنا لخدمتك</p>
-        </div>
-      </div>
+      <p style="font-size: 16px; color: #444; margin-bottom: 25px;">تقدم خدمات تنظيف المنازل والانتريهات، التمريض، رعاية المسنين والأطفال، ومكافحة الحشرات بجودة عالية، سرعة، وأسعار مناسبة.</p>
+      <a href="booking.html" class="btn-book">احجز الآن</a>
     </div>
     <img src="banner.jpeg" class="hero-img" alt="تنظيف">
   </section>
 
-  <!-- Services Section - 6 Services -->
+  <!-- 2. Services Section - الخدمات في النص -->
   <section class="services container" id="services">
     <h2>خدماتنا المميزة</h2>
     <div class="services-grid">
@@ -214,6 +193,31 @@
       <a href="service-elderly.html" class="service-link"><div class="service-card"><img src="service4.png" alt=""><h3>رعاية مسنين</h3><p>اهتمام ورعاية لكبار السن</p></div></a>
       <a href="service-kids.html" class="service-link"><div class="service-card"><img src="service5.png" alt=""><h3>رعاية اطفال</h3><p>امان ورعاية لاطفالك</p></div></a>
       <a href="service-pest.html" class="service-link"><div class="service-card"><img src="service6.png" alt=""><h3>مكافحة الحشرات</h3><p>تخلص نهائي من الحشرات</p></div></a>
+    </div>
+  </section>
+
+  <!-- 3. Features Section - المميزات تحت -->
+  <section class="features container">
+    <h2>لماذا تختار Magic Clean</h2>
+    <div class="feature-item">
+      <div class="icon">⏰</div>
+      <h3>مرونة في المواعيد</h3>
+      <p>الوقت المناسب لك</p>
+    </div>
+    <div class="feature-item">
+      <div class="icon">⭐</div>
+      <h3>جودة عالية</h3>
+      <p>افضل المعدات</p>
+    </div>
+    <div class="feature-item">
+      <div class="icon">🛡️</div>
+      <h3>موثوقون</h3>
+      <p>فريق عمل مدرب</p>
+    </div>
+    <div class="feature-item">
+      <div class="icon">💬</div>
+      <h3>دعم 24 ساعة</h3>
+      <p>نحن هنا لخدمتك</p>
     </div>
   </section>
 
