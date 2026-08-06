@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mpr86-oss.github.io/Magiclean/sitemap.xml
