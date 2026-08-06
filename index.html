@@ -66,7 +66,7 @@
     }
     .btn-book:hover { background: var(--main-light); transform: translateY(-2px); }
 
-    /* Hero with Background Image */
+    /* Hero */
     .hero {
       background: url('hero-bg.jpeg') no-repeat center/cover;
       position: relative;
@@ -86,24 +86,25 @@
       justify-content: space-between;
       gap: 40px;
       flex-direction: row-reverse;
-      padding: 90px 20px 120px; /* زودت padding تحت عشان السهم */
+      padding: 90px 20px 120px;
     }
     .hero-text { flex: 1; text-align: right; }
     .hero-text h1 { font-size: 40px; margin-bottom: 15px; color: var(--main-color); }
     .hero-text p { font-size: 18px; margin-bottom: 15px; color: #555; }
 
-    /* السهم الجديد تحت الزرار */
+    /* السهم مكبر وبنفسجي */
     .scroll-arrow {
       display: inline-block;
-      margin-top: 15px;
-      font-size: 28px;
-      color: var(--main-color);
+      margin-top: 20px;
+      font-size: 42px; /* كبرته */
+      color: var(--main-color); /* بنفسجي */
       text-decoration: none;
       animation: bounce 1.5s infinite;
+      font-weight: bold;
     }
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(8px); }
+      50% { transform: translateY(10px); }
     }
 
     /* Features */
@@ -178,6 +179,7 @@
       nav { display: none; }
       .logo { font-size: 22px; }
       .hero-text h1 { font-size: 30px; }
+      .scroll-arrow { font-size: 36px; } /* في الموبايل اصغر شوية */
     }
   </style>
 </head>
@@ -199,7 +201,7 @@
     </div>
   </header>
 
-  <!-- 1. Hero Section -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="container">
       <div class="hero-text">
@@ -208,13 +210,13 @@
         <p style="font-size: 16px; color: #444; margin-bottom: 25px;">تقدم خدمات تنظيف المنازل والانتريهات، التمريض، رعاية المسنين والأطفال، ومكافحة الحشرات بجودة عالية، سرعة، وأسعار مناسبة.</p>
         <a href="booking.html" class="btn-book">احجز الآن</a>
         <br>
-        <!-- السهم تحت الزرار -->
+        <!-- السهم البنفسجي الكبير -->
         <a href="#services" class="scroll-arrow">⬇️</a>
       </div>
     </div>
   </section>
 
-  <!-- 2. Services Section -->
+  <!-- Services Section -->
   <section class="services container" id="services">
     <h2>خدماتنا المميزة</h2>
     <div class="services-grid">
@@ -227,7 +229,7 @@
     </div>
   </section>
 
-  <!-- 3. Features Section -->
+  <!-- Features Section -->
   <section class="features container">
     <h2>لماذا تختار Magic Clean</h2>
     <div class="feature-item">
