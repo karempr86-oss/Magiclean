@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- الصفحة الرئيسية -->
+  <url>
+    <loc>https://mpr86-oss.github.io/Magiclean/index.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- صفحة الحجز -->
+  <url>
+    <loc>https://mpr86-oss.github.io/Magiclean/booking.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- صفحة التواصل -->
+  <url>
+    <loc>https://mpr86-oss.github.io/Magiclean/contact.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- صفحات الخدمات -->
+  <url>
+    <loc>https://mpr86-oss.github.io/Magiclean/service-cleaning.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mpr86-oss.github.io/Magiclean/service-sofa.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mpr86-oss.github.io/Magiclean/service-nursing.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mpr86-oss.github.io/Magiclean/service-elderly.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mpr86-oss.github.io/Magiclean/service-kids.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mpr86-oss.github.io/Magiclean/service-pest.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
