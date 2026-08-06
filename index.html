@@ -3,63 +3,221 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Magic Clean | ماجيك كلين للخدمات المنزلية</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+  
+  <!-- SEO جديد -->
+  <meta name="keywords" content="تنظيف شقق, تنظيف منازل, خدمات منزلية, شركة تنظيف الجيزة, تنظيف انتريهات, تنظيف سجاد, Magic Clean, رقم شركة تنظيف">
+  <meta name="description" content="Magic Clean افضل شركة تنظيف شقق ومنازل وفلل في الجيزة. خدمات منزلية: تنظيف انتريهات وسجاد وستائر بالبخار + تمريض + رعاية. عمالة مدربة + خصم 20%. اتصل الان 01032990659">
+  <meta name="author" content="Magic Clean">
+  <link rel="canonical" href="https://mpr86-oss.github.io/Magiclean/index.html">
+
+  <title>شركة تنظيف شقق ومنازل في الجيزة | خدمات منزلية - Magic Clean</title>
+  
+  <base href="/Magiclean/">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org للظهور في جوجل -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Magic Clean",
+    "image": "https://mpr86-oss.github.io/Magiclean/logo.png",
+    "@id": "https://mpr86-oss.github.io/Magiclean",
+    "url": "https://mpr86-oss.github.io/Magiclean",
+    "telephone": "+201032990659",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "الجيزة",
+      "addressRegion": "Giza",
+      "addressCountry": "EG"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 30.0131,
+      "longitude": 31.2089
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "08:00",
+      "closes": "22:00"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "120"
+    },
+    "serviceType": ["تنظيف شقق","تنظيف منازل","تنظيف انتريهات","خدمات منزلية","مكافحة الحشرات"]
+  }
+  </script>
+
   <style>
     :root {
-      --main: #7E22CE; /* بنفسجي */
-      --main-light: #A855F7;
-      --accent: #FACC15; /* اصفر */
-      --dark: #1E1B4B;
-      --bg: #F5F3FF;
+      --main-color: #5A189A; 
+      --main-light: #7B2FFF;
+      --bg-color: #F8F7FF;
+      --text-color: #222;
+      --card-bg: #FFFFFF;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Cairo', sans-serif; background: white; color: #333; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    
-    /* Header */
-    header { background: white; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-    .nav { display: flex; justify-content: space-between; align-items: center; }
-    .logo img { height: 60px; }
-    .btn { background: var(--main); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; font-family: 'Cairo'; }
-    .btn-whatsapp { background: #25D366; }
-    
-    /* Hero */
-    .hero { 
-      background: linear-gradient(rgba(126, 34, 206, 0.85), rgba(126, 34, 206, 0.85)), url('hero.jpg') center/cover no-repeat; 
-      color: white; padding: 120px 20px; text-align: center; 
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
     }
-    .hero h1 { font-size: 52px; margin-bottom: 15px; text-shadow: 2px 2px 10px rgba(0,0,0,0.3); }
-    .hero p { font-size: 22px; margin-bottom: 30px; }
-    .hero .btn { background: var(--accent); color: var(--dark); font-size: 20px; padding: 16px 40px; }
-    
-    /* Services */
-    .services { padding: 80px 20px; background: var(--bg); }
-    .services h2 { text-align: center; font-size: 38px; margin-bottom: 50px; color: var(--main); }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-    .card { background: white; padding: 30px; border-radius: 15px; text-align: center; border-top: 5px solid var(--main); box-shadow: 0 5px 20px rgba(126,34,206,0.1); transition: 0.3s; }
-    .card:hover { transform: translateY(-8px); }
-    .card .icon { font-size: 50px; margin-bottom: 15px; }
-    
-    /* Why Us */
-    .why { padding: 80px 20px; background: white; }
-    .why h2 { text-align: center; font-size: 38px; margin-bottom: 50px; color: var(--main); }
-    
-    /* Order Form */
-    .order { padding: 80px 20px; background: var(--bg); }
-    .order h2 { text-align: center; font-size: 38px; margin-bottom: 30px; color: var(--main); }
-    .form { max-width: 600px; margin: 0 auto; background: white; padding: 35px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-    .form input, .form select { width: 100%; padding: 14px; margin-bottom: 15px; border: 1px solid #DDD; border-radius: 10px; font-family: 'Cairo'; font-size: 16px; }
-    
-    /* Footer */
-    footer { background: var(--dark); color: white; padding: 50px 20px; }
-    footer .grid { grid-template-columns: repeat(2, 1fr); }
-    footer a { color: var(--main-light); text-decoration: none; }
-    
-    @media(max-width: 768px) { 
-      .grid { grid-template-columns: 1fr; } 
-      .hero h1 { font-size: 34px; }
-      .hero { padding: 80px 20px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    header {
+      background: white;
+      padding: 12px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--main-color);
+      text-decoration: none;
+    }
+    nav { display: flex; gap: 20px; }
+    nav a { text-decoration: none; color: #555; font-weight: 600; transition: 0.3s; }
+    nav a:hover { color: var(--main-color); }
+    .btn-book {
+      background: var(--main-color);
+      color: white;
+      padding: 10px 22px;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Cairo';
+      text-decoration: none;
+      transition: 0.3s;
+      display: inline-block;
+    }
+    .btn-book:hover { background: var(--main-light); transform: translateY(-2px); }
+
+    .hero {
+      background: url('hero-bg.jpeg') no-repeat center/cover;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255, 255, 255, 0.88);
+      z-index: 0;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-direction: row-reverse;
+      padding: 90px 20px 120px;
+    }
+    .hero-text { flex: 1; text-align: right; }
+    .hero-text h1 { font-size: 40px; margin-bottom: 15px; color: var(--main-color); }
+    .hero-text p { font-size: 18px; margin-bottom: 15px; color: #555; }
+
+    /* السهم SVG بنفسجي وكبير */
+    .scroll-arrow {
+      display: inline-block;
+      margin-top: 20px;
+      width: 45px;
+      height: 45px;
+      fill: var(--main-color);
+      text-decoration: none;
+      animation: bounce 1.5s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      text-align: center;
+      padding: 70px 20px;
+      background: white;
+    }
+    .features h2 { grid-column: 1 / -1; font-size: 30px; color: var(--main-color); margin-bottom: 30px; }
+    .feature-item .icon {
+      font-size: 36px;
+      color: var(--main-color);
+      margin-bottom: 10px;
+    }
+    .feature-item h3 { color: var(--main-color); margin: 10px 0 5px; font-size: 17px; }
+    .feature-item p { font-size: 14px; color: #666; }
+
+    .services { padding: 70px 20px; }
+    .services h2 { text-align: center; font-size: 30px; margin-bottom: 40px; color: var(--main-color); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    .service-card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(90, 24, 154, 0.08);
+      transition: 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(90, 24, 154, 0.15);
+    }
+    .service-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      margin-bottom: 15px;
+    }
+    .service-card h3 { margin-bottom: 10px; color: var(--main-color); }
+    .service-link { text-decoration: none; color: inherit; }
+
+    footer {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 25px 0;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 900px) {
+      .hero .container { flex-direction: column; padding: 60px 20px 100px; }
+      .hero-text { text-align: center; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .features { grid-template-columns: repeat(2, 1fr); }
+      .nav { flex-direction: column; gap: 15px; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr; }
+      nav { display: none; }
+      .logo { font-size: 22px; }
+      .hero-text h1 { font-size: 30px; }
+      .scroll-arrow { width: 38px; height: 38px; }
     }
   </style>
 </head>
@@ -67,95 +225,78 @@
 
   <header>
     <div class="container nav">
-      <div class="logo">
-        <img src="logo.png" alt="Magic Clean">
-      </div>
-      <div>
-        <a href="https://wa.me/201032990659" class="btn btn-whatsapp">واتساب</a>
-        <a href="tel:01032990659" class="btn">اتصل الان</a>
-      </div>
+      <a href="index.html" class="logo">
+        Magic Clean
+      </a>
+      <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="#services">خدماتنا</a>
+        <a href="#">عن الشركة</a>
+        <a href="contact.html">اتصل بنا</a>
+      </nav>
+      <a href="booking.html" class="btn-book">📅 احجز الآن</a>
     </div>
   </header>
 
   <section class="hero">
     <div class="container">
-      <h1>Magic Clean ماجيك كلين</h1>
-      <p>نظافة... تليق بك ✨</p>
-      <a href="#order" class="btn">اطلب الخدمة الان</a>
-    </div>
-  </section>
-
-  <section class="services">
-    <div class="container">
-      <h2>خدماتنا المميزة</h2>
-      <div class="grid">
-        <div class="card"><div class="icon">🏠</div><h3>تنظيف منازل</h3><p>تنظيف شامل وتعقيم بمواد امنة</p></div>
-        <div class="card"><div class="icon">🛋️</div><h3>تنظيف انتريهات</h3><p>تنظيف بالبخار بدون اضرار</p></div>
-        <div class="card"><div class="icon">👶</div><h3>رعاية اطفال</h3><p>بيبي سيتر محترفات وامينات</p></div>
-        <div class="card"><div class="icon">👴</div><h3>رعاية مسنين</h3><p>رعاية صحية واهتمام 24 ساعة</p></div>
-        <div class="card"><div class="icon">👨‍🍳</div><h3>طبخ منزلي</h3><p>شيفات محترفات باكل بيتي</p></div>
-        <div class="card"><div class="icon">🐜</div><h3>مكافحة الحشرات</h3><p>بدون رائحة وامان على الاطفال</p></div>
-        <div class="card"><div class="icon">🩺</div><h3>تمريض منزلي</h3><p>ممرضين وممرضات معتمدين</p></div>
+      <div class="hero-text">
+        <h1>افضل شركة تنظيف شقق ومنازل في الجيزة</h1> <!-- عدلت H1 للـ SEO -->
+        <p>احصل على خدمات تنظيف وتمريض ورعاية احترافية في بيتك</p>
+        <p style="font-size: 16px; color: #444; margin-bottom: 25px;">تقدم Magic Clean خدمات تنظيف المنازل والشقق والانتريهات، التمريض، رعاية المسنين والأطفال، ومكافحة الحشرات بجودة عالية، سرعة، وأسعار مناسبة.</p>
+        <a href="booking.html" class="btn-book">احجز الآن</a>
+        <br>
+        <!-- السهم SVG البنفسجي -->
+        <a href="#services" class="scroll-arrow">
+          <svg viewBox="0 0 24 24">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+          </svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="why">
-    <div class="container">
-      <h2>ليه تختار ماجيك كلين؟</h2>
-      <div class="grid">
-        <div class="card"><h3>فريق محترف</h3><p>عمالة مدربة ومؤمن عليها</p></div>
-        <div class="card"><h3>ادوات حديثة</h3><p>بنستخدم احدث المعدات</p></div>
-        <div class="card"><h3>اسعار مناسبة</h3><p>عروض وخصومات مستمرة</p></div>
-      </div>
+  <section class="services container" id="services">
+    <h2>خدماتنا المنزلية المميزة</h2> <!-- عدلت H2 للـ SEO -->
+    <div class="services-grid">
+      <a href="service-cleaning.html" class="service-link"><div class="service-card"><img src="service1.png" alt="تنظيف منازل"><h3>تنظيف منازل</h3><p>تنظيف شامل لكل ركن في بيتك</p></div></a>
+      <a href="service-sofa.html" class="service-link"><div class="service-card"><img src="service2.png" alt="تنظيف انتريهات"><h3>تنظيف انتريهات</h3><p>نرجع الانتريه جديد</p></div></a>
+      <a href="service-nursing.html" class="service-link"><div class="service-card"><img src="service3.png" alt="تمريض منزلي"><h3>تمريض</h3><p>رعاية طبية في المنزل</p></div></a>
+      <a href="service-elderly.html" class="service-link"><div class="service-card"><img src="service4.png" alt="رعاية مسنين"><h3>رعاية مسنين</h3><p>اهتمام ورعاية لكبار السن</p></div></a>
+      <a href="service-kids.html" class="service-link"><div class="service-card"><img src="service5.png" alt="رعاية اطفال"><h3>رعاية اطفال</h3><p>امان ورعاية لاطفالك</p></div></a>
+      <a href="service-pest.html" class="service-link"><div class="service-card"><img src="service6.png" alt="مكافحة الحشرات"><h3>مكافحة الحشرات</h3><p>تخلص نهائي من الحشرات</p></div></a>
     </div>
   </section>
 
-  <section class="order" id="order">
-    <div class="container">
-      <h2>اطلب الخدمة في 3 دقايق</h2>
-      <div class="form">
-        <input type="text" placeholder="الاسم بالكامل">
-        <input type="tel" placeholder="رقم الهاتف">
-        <select>
-          <option>اختر الخدمة</option>
-          <option>تنظيف منازل</option>
-          <option>تنظيف انتريهات</option>
-          <option>رعاية اطفال</option>
-          <option>رعاية مسنين</option>
-          <option>طبخ منزلي</option>
-          <option>مكافحة الحشرات</option>
-          <option>تمريض منزلي</option>
-        </select>
-        <button onclick="sendWhatsApp()" class="btn" style="width:100%;">ارسال طلب عبر واتساب</button>
-      </div>
+  <section class="features container">
+    <h2>لماذا تختار Magic Clean</h2>
+    <div class="feature-item">
+      <div class="icon">⏰</div>
+      <h3>مرونة في المواعيد</h3>
+      <p>الوقت المناسب لك</p>
+    </div>
+    <div class="feature-item">
+      <div class="icon">⭐</div>
+      <h3>جودة عالية</h3>
+      <p>افضل المعدات</p>
+    </div>
+    <div class="feature-item">
+      <div class="icon">🛡️</div>
+      <h3>موثوقون</h3>
+      <p>فريق عمل مدرب</p>
+    </div>
+    <div class="feature-item">
+      <div class="icon">💬</div>
+      <h3>دعم 24 ساعة</h3>
+      <p>نحن هنا لخدمتك</p>
     </div>
   </section>
 
   <footer>
-    <div class="container grid">
-      <div>
-        <h3>تواصل معنا</h3>
-        <p>رقم الهاتف: <a href="tel:01032990659">01032990659</a></p>
-        <p>واتساب: <a href="https://wa.me/201032990659">01032990659</a></p>
-        <p>العنوان: <a href="https://maps.app.goo.gl/bE5yPe71yxWhm2oNA" target="_blank">شوفنا على الخريطة</a></p>
-      </div>
-      <div>
-        <img src="logo.png" alt="logo" style="height:80px; filter: brightness(0) invert(1);">
-        <p style="margin-top:10px;">Magic Clean For Public Services</p>
-      </div>
+    <div class="container">
+      <p>للتواصل: 01032990659 | © 2026 Magic Clean For Public Services. جميع الحقوق محفوظة</p> <!-- ضفت الرقم للـ SEO -->
     </div>
   </footer>
-
-  <script>
-    function sendWhatsApp() {
-      let name = document.querySelector('.form input[type=text]').value;
-      let phone = document.querySelector('.form input[type=tel]').value;
-      let service = document.querySelector('.form select').value;
-      let msg = `مرحبا ماجيك كلين%0Aالاسم: ${name}%0Aالرقم: ${phone}%0Aالخدمة: ${service}`;
-      window.open(`https://wa.me/201032990659?text=${msg}`, '_blank');
-    }
-  </script>
 
 </body>
 </html>
