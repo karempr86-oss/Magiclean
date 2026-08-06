@@ -18,7 +18,7 @@
       --card-bg: #FFFFFF;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; } /* عشان النزول يبقى ناعم */
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Cairo', sans-serif;
       background: var(--bg-color);
@@ -70,15 +70,12 @@
     .hero {
       background: url('hero-bg.jpeg') no-repeat center/cover;
       position: relative;
-      min-height: 90vh; /* خليته اطول شوية عشان السهم يبان */
-      display: flex;
-      align-items: center;
     }
     .hero::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(255, 255, 255, 0.88); /* طبقة بيضا عشان الكلام يبان */
+      background: rgba(255, 255, 255, 0.88);
       z-index: 0;
     }
     .hero .container {
@@ -89,36 +86,24 @@
       justify-content: space-between;
       gap: 40px;
       flex-direction: row-reverse;
-      padding: 90px 20px;
-      width: 100%;
+      padding: 90px 20px 120px; /* زودت padding تحت عشان السهم */
     }
     .hero-text { flex: 1; text-align: right; }
     .hero-text h1 { font-size: 40px; margin-bottom: 15px; color: var(--main-color); }
     .hero-text p { font-size: 18px; margin-bottom: 15px; color: #555; }
 
-    /* السهم الجديد */
-    .scroll-down {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      text-align: center;
+    /* السهم الجديد تحت الزرار */
+    .scroll-arrow {
+      display: inline-block;
+      margin-top: 15px;
+      font-size: 28px;
       color: var(--main-color);
-      font-weight: 600;
-      animation: bounce 2s infinite;
-      cursor: pointer;
-    }
-    .scroll-down span { display: block; font-size: 14px; margin-bottom: 5px; }
-    .scroll-down svg {
-      width: 28px;
-      height: 28px;
-      fill: var(--main-color);
+      text-decoration: none;
+      animation: bounce 1.5s infinite;
     }
     @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-      40% { transform: translateX(-50%) translateY(-10px); }
-      60% { transform: translateX(-50%) translateY(-5px); }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
     }
 
     /* Features */
@@ -181,7 +166,7 @@
 
     /* Responsive */
     @media (max-width: 900px) {
-      .hero .container { flex-direction: column; padding: 60px 20px; }
+      .hero .container { flex-direction: column; padding: 60px 20px 100px; }
       .hero-text { text-align: center; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .features { grid-template-columns: repeat(2, 1fr); }
@@ -214,7 +199,7 @@
     </div>
   </header>
 
-  <!-- 1. Hero Section - البانر بالصورة الجديدة -->
+  <!-- 1. Hero Section -->
   <section class="hero">
     <div class="container">
       <div class="hero-text">
@@ -222,16 +207,11 @@
         <p>احصل على خدمات تنظيف وتمريض ورعاية احترافية في بيتك</p>
         <p style="font-size: 16px; color: #444; margin-bottom: 25px;">تقدم خدمات تنظيف المنازل والانتريهات، التمريض، رعاية المسنين والأطفال، ومكافحة الحشرات بجودة عالية، سرعة، وأسعار مناسبة.</p>
         <a href="booking.html" class="btn-book">احجز الآن</a>
+        <br>
+        <!-- السهم تحت الزرار -->
+        <a href="#services" class="scroll-arrow">⬇️</a>
       </div>
     </div>
-
-    <!-- السهم اللي بيقول انزل -->
-    <a href="#services" class="scroll-down">
-      <span>انزل لأسفل</span>
-      <svg viewBox="0 0 24 24">
-        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
-      </svg>
-    </a>
   </section>
 
   <!-- 2. Services Section -->
