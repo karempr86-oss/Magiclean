@@ -304,17 +304,23 @@
         setTimeout(typing, 100);
       }
     }
-    typing();
+    window.onload = typing; // خليته يشتغل بعد ما الصفحة تحمل
 
-    // Image Slider كل 1 ثانية
+    // Image Slider - متظبط عشان ميعملش ايرور
     let currentSlide = 0;
     const slides = document.querySelectorAll('.hero-slide');
+
     function showNextSlide() {
+      if(slides.length === 0) return; // لو مفيش صور ميعملش حاجة
       slides[currentSlide].classList.remove('active');
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add('active');
     }
-    setInterval(showNextSlide, 1000);
+
+    // شغل السلايدر بعد ثانيتين عشان الصور تكون حملت
+    setTimeout(() => {
+      setInterval(showNextSlide, 2000); // خليتها كل 2 ثانية بدل 1
+    }, 2000);
 
     function showService(service) {
       document.getElementById('home').style.display = 'none';
