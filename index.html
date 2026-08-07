@@ -74,7 +74,7 @@
    .whatsapp-btn { background: var(--whatsapp); }
    .call-btn { background: var(--main); animation-delay: 0.5s; }
 
-    /* Hero with Slider */
+    /* Hero with Slider - الصور كاملة */
    .hero {
       padding: 200px 20px 120px;
       text-align: center;
@@ -84,20 +84,27 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      background: #070714;
     }
    .hero-slider {
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
       z-index: -1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
    .hero-slide {
       position: absolute;
-      width: 100%; height: 100%;
-      object-fit: cover;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain; /* الصورة كاملة بدون قص */
       opacity: 0;
       transition: opacity 0.8s ease-in-out;
-      filter: brightness(0.4);
+      filter: brightness(0.5);
     }
    .hero-slide.active { opacity: 1; }
    .hero::after {
@@ -246,7 +253,7 @@
             <div class="name" style="color:var(--main-light); font-weight:700;">- احمد محمد</div>
           </div>
           <div class="testi-card">
-            <div class="stars">★★★</div>
+            <div class="stars">★★★★★</div>
             <p>"خدمة رعاية المسنين ممتازة. الممرضة كانت قمة في الذوق والاهتمام بوالدتي"</p>
             <div class="name" style="color:var(--main-light); font-weight:700;">- سارة علي</div>
           </div>
@@ -277,7 +284,7 @@
   <!-- صفحات الخدمات -->
   <div id="service-cleaning" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>🏠 تنظيف منازل</h2><p style="font-size:18px; margin:20px 0;">بنوفر فريق محترف لتنظيف وتعقيم منزلك بالكامل.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة تنظيف منازل" class="btn">اطلب الخدمة الان</a></div></div>
   <div id="service-sofa" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>🛋️ تنظيف انتريهات</h2><p style="font-size:18px; margin:20px 0;">تنظيف بالبخار لجميع انواع الانتريهات.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة تنظيف انتريهات" class="btn">اطلب الخدمة الان</a></div></div>
-  <div id="service-babysitter" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>👶 رعاية اطفال</h2><p style="font-size:18px; margin:20px 0;">بيبي سيتر مدربات وامينات.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة رعاية اطفال" class="btn">اطلب الخدمة الان</a></div></div>
+  <div id="service-babysitter" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>👶 رعاية اطفال</h2><p style="font-size:18px; margin:20px 0;">بي سيتر مدربات وامينات.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة رعاية اطفال" class="btn">اطلب الخدمة الان</a></div></div>
   <div id="service-elderly" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>👴 رعاية مسنين</h2><p style="font-size:18px; margin:20px 0;">رعاية صحية ومرافقة 24 ساعة.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة رعاية مسنين" class="btn">اطلب الخدمة الان</a></div></div>
   <div id="service-cooking" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>👨‍🍳 خدمة الطبخ</h2><p style="font-size:18px; margin:20px 0;">شيفات منزلية لعمل اكل بيتي.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة الطبخ" class="btn">اطلب الخدمة الان</a></div></div>
   <div id="service-pest" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>🐜 مكافحة الحشرات</h2><p style="font-size:18px; margin:20px 0;">مكافحة جميع انواع الحشرات بدون رائحة.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة مكافحة الحشرات" class="btn">اطلب الخدمة الان</a></div></div>
@@ -303,7 +310,7 @@
     }
     typing();
 
-    // Image Slider
+    // Image Slider كل 1 ثانية
     let currentSlide = 0;
     const slides = document.querySelectorAll('.hero-slide');
     function showNextSlide() {
@@ -311,7 +318,7 @@
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add('active');
     }
-    setInterval(showNextSlide, 1000); // كل 1 ثانية
+    setInterval(showNextSlide, 1000);
 
     function showService(service) {
       document.getElementById('home').style.display = 'none';
@@ -327,4 +334,4 @@
   </script>
 
 </body>
-                                                                                                                                                                                                                                                                                                                                                                </html>
+</html>
