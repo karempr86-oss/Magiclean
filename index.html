@@ -23,12 +23,25 @@
     @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } }
+    @keyframes glow { 0%,100% { text-shadow: 0 0 10px rgba(139,92,246,0.5); } 50% { text-shadow: 0 0 25px rgba(139,92,246,0.9); } }
     .cursor { display: inline-block; width: 3px; background: var(--accent); animation: blink 1s infinite; }
     @keyframes blink { 50% { opacity: 0; } }
     
     header { padding: 20px 0; position: fixed; width: 100%; top: 0; background: rgba(7,7,20,0.8); backdrop-filter: blur(15px); z-index: 100; border-bottom: 1px solid rgba(139,92,246,0.1); }
     .nav { display: flex; justify-content: space-between; align-items: center; }
-    .logo img { height: 55px; animation: float 3s ease-in-out infinite; cursor: pointer; }
+    
+    /* اللوجو الجديد كلمة */
+    .logo-text { 
+      font-size: 32px; 
+      font-weight: 900; 
+      background: linear-gradient(90deg, #A78BFA, #FACC15); 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s ease-in-out infinite;
+      cursor: pointer;
+      letter-spacing: 1px;
+    }
+    
     .btn { background: linear-gradient(90deg, #7C3AED, #8B5CF6); color: white; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; display: inline-block; }
     .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(139,92,246,0.5); }
     
@@ -99,6 +112,7 @@
     @media(max-width: 768px) { 
       .grid, .stats-grid, .about-content { grid-template-columns: 1fr; } 
       .hero h1 { font-size: 42px; }
+      .logo-text { font-size: 24px; }
       .testi-card { min-width: 300px; }
       .floating-btns { bottom: 20px; left: 20px; }
       .float-btn { width: 55px; height: 55px; font-size: 26px; }
@@ -115,8 +129,8 @@
 
   <header>
     <div class="container nav">
-      <div class="logo" onclick="showHome()">
-        <img src="logo.png" alt="Magic Clean">
+      <div class="logo-text" onclick="showHome()">
+        MagicClean
       </div>
       <div>
         <a href="#about" class="btn" style="background:transparent; border:1px solid var(--main); margin-left:10px;">من نحن</a>
@@ -150,7 +164,7 @@
         <h2>من نحن</h2>
         <div class="about-content">
           <div class="about-text">
-            <p><strong style="color:var(--main-light);">Magic Clean ماجيك كلين</strong> شركة رائدة في مجال الخدمات المنزلية في مصر منذ اكثر من 15 سنة.</p>
+            <p><strong style="color:var(--main-light);">MagicClean</strong> شركة رائدة في مجال الخدمات المنزلية في مصر منذ اكثر من 15 سنة.</p>
             <p>مهمتنا اننا نوفرلك حياة اسهل وانضف. بنقدم فريق محترف ومدرب على اعلى مستوى + احدث المعدات + مواد تنظيف امنة 100%.</p>
             <p>بنخدم اكتر من 5000 عميل وهدفنا رضاك هو اولويتنا. "نظافة... تليق بك"</p>
             <a href="https://wa.me/201032990659" class="btn">تواصل معنا</a>
@@ -180,7 +194,7 @@
         <h2>اراء عملائنا</h2>
         <div class="testi-slider">
           <div class="testi-card">
-            <div class="stars">★★★★★</div>
+            <div class="stars">★★★</div>
             <p>"بصراحة افضل شركة تنظيف اتعاملت معاها. الفريق محترم جدا والشغل نضيف 100%"</p>
             <div class="name" style="color:var(--main-light); font-weight:700;">- احمد محمد</div>
           </div>
@@ -214,18 +228,18 @@
   </div>
 
   <!-- صفحات الخدمات -->
-  <div id="service-cleaning" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>🏠 تنظيف منازل</h2><p style="font-size:18px; margin:20px 0;">بنوفر فريق محترف لتنظيف وتعقيم منزلك بالكامل بأحدث الاجهزة ومواد امنة.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة تنظيف منازل" class="btn">اطلب الخدمة الان</a></div></div>
-  <div id="service-sofa" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>🛋️ تنظيف انتريهات</h2><p style="font-size:18px; margin:20px 0;">تنظيف بالبخار لجميع انواع الانتريهات والمراتب والسجاد.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة تنظيف انتريهات" class="btn">اطلب الخدمة الان</a></div></div>
-  <div id="service-babysitter" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>👶 رعاية اطفال</h2><p style="font-size:18px; margin:20px 0;">بيبي سيتر مدربات وامينات لمتابعة اطفالك.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة رعاية اطفال" class="btn">اطلب الخدمة الان</a></div></div>
-  <div id="service-elderly" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>👴 رعاية مسنين</h2><p style="font-size:18px; margin:20px 0;">رعاية صحية ومرافقة لكبار السن 24 ساعة.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة رعاية مسنين" class="btn">اطلب الخدمة الان</a></div></div>
-  <div id="service-cooking" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>👨‍🍳 خدمة الطبخ</h2><p style="font-size:18px; margin:20px 0;">شيفات منزلية لعمل اكل بيتي طازة.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة الطبخ" class="btn">اطلب الخدمة الان</a></div></div>
+  <div id="service-cleaning" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>🏠 تنظيف منازل</h2><p style="font-size:18px; margin:20px 0;">بنوفر فريق محترف لتنظيف وتعقيم منزلك بالكامل.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة تنظيف منازل" class="btn">اطلب الخدمة الان</a></div></div>
+  <div id="service-sofa" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>🛋️ تنظيف انتريهات</h2><p style="font-size:18px; margin:20px 0;">تنظيف بالبخار لجميع انواع الانتريهات.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة تنظيف انتريهات" class="btn">اطلب الخدمة الان</a></div></div>
+  <div id="service-babysitter" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>👶 رعاية اطفال</h2><p style="font-size:18px; margin:20px 0;">بيبي سيتر مدربات وامينات.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة رعاية اطفال" class="btn">اطلب الخدمة الان</a></div></div>
+  <div id="service-elderly" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>👴 رعاية مسنين</h2><p style="font-size:18px; margin:20px 0;">رعاية صحية ومرافقة 24 ساعة.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة رعاية مسنين" class="btn">اطلب الخدمة الان</a></div></div>
+  <div id="service-cooking" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>👨‍🍳 خدمة الطبخ</h2><p style="font-size:18px; margin:20px 0;">شيفات منزلية لعمل اكل بيتي.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة الطبخ" class="btn">اطلب الخدمة الان</a></div></div>
   <div id="service-pest" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>🐜 مكافحة الحشرات</h2><p style="font-size:18px; margin:20px 0;">مكافحة جميع انواع الحشرات بدون رائحة.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة مكافحة الحشرات" class="btn">اطلب الخدمة الان</a></div></div>
-  <div id="service-nursing" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>🩺 تمريض منزلي</h2><p style="font-size:18px; margin:20px 0;">ممرضين وممرضات معتمدين للرعاية المنزلية.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة تمريض منزلي" class="btn">اطلب الخدمة الان</a></div></div>
+  <div id="service-nursing" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>🩺 تمريض منزلي</h2><p style="font-size:18px; margin:20px 0;">ممرضين وممرضات معتمدين.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة تمريض منزلي" class="btn">اطلب الخدمة الان</a></div></div>
 
   <footer>
     <div class="container">
       <p>رقم الهاتف: <a href="tel:01032990659" style="color:var(--main-light);">01032990659</a> | واتساب: <a href="https://wa.me/201032990659" style="color:var(--main-light);">01032990659</a></p>
-      <p style="margin-top:15px;">© 2026 Magic Clean For Public Services</p>
+      <p style="margin-top:15px;">© 2026 MagicClean For Public Services</p>
     </div>
   </footer>
 
@@ -255,4 +269,4 @@
   </script>
 
 </body>
-</html>
+          </html>
