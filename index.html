@@ -30,7 +30,6 @@
     header { padding: 20px 0; position: fixed; width: 100%; top: 0; background: rgba(7,7,20,0.8); backdrop-filter: blur(15px); z-index: 100; border-bottom: 1px solid rgba(139,92,246,0.1); }
     .nav { display: flex; justify-content: space-between; align-items: center; }
     
-    /* اللوجو الجديد كلمة */
     .logo-text { 
       font-size: 32px; 
       font-weight: 900; 
@@ -42,8 +41,12 @@
       letter-spacing: 1px;
     }
     
-    .btn { background: linear-gradient(90deg, #7C3AED, #8B5CF6); color: white; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; display: inline-block; }
+    /* الازرار جنب بعض */
+    .nav-buttons { display: flex; gap: 12px; align-items: center; }
+    .btn { background: linear-gradient(90deg, #7C3AED, #8B5CF6); color: white; padding: 10px 22px; border-radius: 50px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; display: inline-block; font-size: 15px; }
     .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(139,92,246,0.5); }
+    .btn-outline { background: transparent; border: 2px solid var(--main); }
+    .btn-outline:hover { background: var(--main); }
     
     /* Floating Buttons */
     .floating-btns {
@@ -113,6 +116,8 @@
       .grid, .stats-grid, .about-content { grid-template-columns: 1fr; } 
       .hero h1 { font-size: 42px; }
       .logo-text { font-size: 24px; }
+      .nav-buttons { gap: 8px; }
+      .btn { padding: 8px 16px; font-size: 13px; }
       .testi-card { min-width: 300px; }
       .floating-btns { bottom: 20px; left: 20px; }
       .float-btn { width: 55px; height: 55px; font-size: 26px; }
@@ -132,8 +137,9 @@
       <div class="logo-text" onclick="showHome()">
         MagicClean
       </div>
-      <div>
-        <a href="#about" class="btn" style="background:transparent; border:1px solid var(--main); margin-left:10px;">من نحن</a>
+      <!-- الازرار بقت جنب بعض -->
+      <div class="nav-buttons">
+        <a href="#about" class="btn btn-outline">من نحن</a>
         <a href="https://wa.me/201032990659" class="btn">اطلب الان</a>
       </div>
     </div>
@@ -199,12 +205,12 @@
             <div class="name" style="color:var(--main-light); font-weight:700;">- احمد محمد</div>
           </div>
           <div class="testi-card">
-            <div class="stars">★★★★★</div>
+            <div class="stars">★★★</div>
             <p>"خدمة رعاية المسنين ممتازة. الممرضة كانت قمة في الذوق والاهتمام بوالدتي"</p>
             <div class="name" style="color:var(--main-light); font-weight:700;">- سارة علي</div>
           </div>
           <div class="testi-card">
-            <div class="stars">★★★★★</div>
+            <div class="stars">★★★</div>
             <p>"جربت خدمة تنظيف الانتريهات والنتيجة كانت مبهرة. رجع جديد كأنه لسه شاريه"</p>
             <div class="name" style="color:var(--main-light); font-weight:700;">- محمود حسن</div>
           </div>
@@ -269,4 +275,4 @@
   </script>
 
 </body>
-          </html>
+</html>
