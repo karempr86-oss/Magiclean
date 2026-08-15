@@ -18,64 +18,31 @@
     * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body { font-family: 'Cairo', sans-serif; background: var(--bg); color: var(--text); }
     body::before { content: ''; position: fixed; width: 100%; height: 100%; background: radial-gradient(circle at 30% 20%, rgba(139, 92, 246, 0.2) 0%, transparent 50%); z-index: -1; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } }
     @keyframes glow { 0%,100% { text-shadow: 0 0 10px rgba(139,92,246,0.5); } 50% { text-shadow: 0 0 25px rgba(139,92,246,0.9); } }
-.cursor { display: inline-block; width: 3px; background: var(--accent); animation: blink 1s infinite; }
+    .cursor { display: inline-block; width: 3px; background: var(--accent); animation: blink 1s infinite; }
     @keyframes blink { 50% { opacity: 0; } }
 
     header { padding: 20px 0; position: fixed; width: 100%; top: 0; background: rgba(7,7,20,0.8); backdrop-filter: blur(15px); z-index: 100; border-bottom: 1px solid rgba(139,92,246,0.1); }
-.nav { display: flex; justify-content: space-between; align-items: center; }
+    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo-text { font-size: 32px; font-weight: 900; background: linear-gradient(90deg, #A78BFA, #FACC15); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: glow 3s ease-in-out infinite; cursor: pointer; letter-spacing: 1px; }
+    .nav-buttons { display: flex; gap: 12px; align-items: center; }
+    .btn { background: linear-gradient(90deg, #7C3AED, #8B5CF6); color: white; padding: 10px 22px; border-radius: 50px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; display: inline-block; font-size: 15px; }
+    .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(139,92,246,0.5); }
+    .btn-outline { background: transparent; border: 2px solid var(--main); }
+    .btn-outline:hover { background: var(--main); }
 
-.logo-text {
-      font-size: 32px;
-      font-weight: 900;
-      background: linear-gradient(90deg, #A78BFA, #FACC15);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: glow 3s ease-in-out infinite;
-      cursor: pointer;
-      letter-spacing: 1px;
-    }
-
-.nav-buttons { display: flex; gap: 12px; align-items: center; }
-.btn { background: linear-gradient(90deg, #7C3AED, #8B5CF6); color: white; padding: 10px 22px; border-radius: 50px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; display: inline-block; font-size: 15px; }
-.btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(139,92,246,0.5); }
-.btn-outline { background: transparent; border: 2px solid var(--main); }
-.btn-outline:hover { background: var(--main); }
-
-    /* Floating Buttons */
-.floating-btns {
-      position: fixed;
-      bottom: 25px;
-      left: 25px;
-      z-index: 999;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-.float-btn {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      text-decoration: none;
-      color: white;
-      transition: 0.3s;
-      animation: pulse 2s infinite;
-    }
-.float-btn:hover { transform: scale(1.1); }
-.whatsapp-btn { background: var(--whatsapp); }
-.call-btn { background: var(--main); animation-delay: 0.5s; }
+    .floating-btns { position: fixed; bottom: 25px; left: 25px; z-index: 999; display: flex; flex-direction: column; gap: 15px; }
+    .float-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; color: white; transition: 0.3s; animation: pulse 2s infinite; }
+    .float-btn:hover { transform: scale(1.1); }
+    .whatsapp-btn { background: var(--whatsapp); }
+    .call-btn { background: var(--main); animation-delay: 0.5s; }
 
     /* HERO - فيديو خلفية */
-.hero {
+    .hero {
       padding: 200px 20px 120px;
       text-align: center;
       position: relative;
@@ -85,7 +52,7 @@
       align-items: center;
       justify-content: center;
     }
-.hero-video {
+    .hero-video {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -98,7 +65,7 @@
       filter: brightness(0.6);
       object-fit: cover;
     }
-.hero::after {
+    .hero::after {
       content: '';
       position: absolute;
       top: 0; left: 0;
@@ -106,64 +73,63 @@
       background: linear-gradient(180deg, rgba(7,7,20,0.85) 0%, rgba(7,7,20,0.6) 50%, rgba(7,7,20,0.85) 100%);
       z-index: 1;
     }
-.hero-content { position: relative; z-index: 2; }
-.hero h1 { font-size: 65px; font-weight: 900; background: linear-gradient(90deg, #A78BFA, #FACC15); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.hero.subtitle { font-size: 24px; margin: 20px 0 40px; color: #E5E7EB; min-height: 35px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
-.hero p { text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+    .hero-content { position: relative; z-index: 2; }
+    .hero h1 { font-size: 65px; font-weight: 900; background: linear-gradient(90deg, #A78BFA, #FACC15); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero.subtitle { font-size: 24px; margin: 20px 0 40px; color: #E5E7EB; min-height: 35px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+    .hero p { text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
 
-.stats { padding: 80px 20px; background: var(--card); }
-.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
-.stat h3 { font-size: 50px; color: var(--main-light); font-weight: 900; }
+    .stats { padding: 80px 20px; background: var(--card); }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+    .stat h3 { font-size: 50px; color: var(--main-light); font-weight: 900; }
 
-.services { padding: 100px 20px; }
-.services h2 { text-align: center; font-size: 44px; margin-bottom: 60px; }
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.card { background: var(--card); padding: 35px; border-radius: 20px; border: 1px solid rgba(139,92,246,0.2); transition: 0.4s; cursor: pointer; }
-.card:hover { transform: translateY(-12px); border-color: var(--main); box-shadow: 0 15px 50px rgba(139,92,246,0.3); }
+    .services { padding: 100px 20px; }
+    .services h2 { text-align: center; font-size: 44px; margin-bottom: 60px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .card { background: var(--card); padding: 35px; border-radius: 20px; border: 1px solid rgba(139,92,246,0.2); transition: 0.4s; cursor: pointer; text-align: center; }
+    .card:hover { transform: translateY(-12px); border-color: var(--main); box-shadow: 0 15px 50px rgba(139,92,246,0.3); }
 
-.about { padding: 100px 20px; background: var(--card); }
-.about h2 { text-align: center; font-size: 44px; margin-bottom: 40px; }
-.about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-.about-text p { font-size: 18px; line-height: 1.9; margin-bottom: 20px; color: #9CA3AF; }
-.about-img { width: 100%; border-radius: 20px; box-shadow: 0 0 40px rgba(139,92,246,0.3); }
+    .about { padding: 100px 20px; background: var(--card); }
+    .about h2 { text-align: center; font-size: 44px; margin-bottom: 40px; }
+    .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .about-text p { font-size: 18px; line-height: 1.9; margin-bottom: 20px; color: #9CA3AF; }
+    .about-img { width: 100%; border-radius: 20px; box-shadow: 0 0 40px rgba(139,92,246,0.3); }
 
-.testimonials { padding: 100px 20px; }
-.testimonials h2 { text-align: center; font-size: 44px; margin-bottom: 60px; }
-.testi-slider { display: flex; gap: 30px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 20px; }
-.testi-card { min-width: 350px; background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(139,92,246,0.2); scroll-snap-align: start; }
-.stars { color: var(--accent); font-size: 20px; margin-bottom: 15px; }
+    .testimonials { padding: 100px 20px; }
+    .testimonials h2 { text-align: center; font-size: 44px; margin-bottom: 60px; }
+    .testi-slider { display: flex; gap: 30px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 20px; }
+    .testi-card { min-width: 350px; background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(139,92,246,0.2); scroll-snap-align: start; }
+    .stars { color: var(--accent); font-size: 20px; margin-bottom: 15px; }
 
-.map { padding: 100px 20px; background: var(--card); }
-.map h2 { text-align: center; font-size: 44px; margin-bottom: 40px; }
-.map iframe { width: 100%; height: 450px; border: none; border-radius: 20px; box-shadow: 0 0 40px rgba(139,92,246,0.2); }
+    .map { padding: 100px 20px; background: var(--card); }
+    .map h2 { text-align: center; font-size: 44px; margin-bottom: 40px; }
+    .map iframe { width: 100%; height: 450px; border: none; border-radius: 20px; box-shadow: 0 0 40px rgba(139,92,246,0.2); }
 
-.service-detail { display: none; padding: 150px 20px 100px; }
-.service-detail.active { display: block; animation: fadeUp 0.5s; }
-.back-btn { margin-bottom: 30px; background: transparent; border: 1px solid var(--main); }
-.service-detail h2 { font-size: 40px; color: var(--main-light); margin-bottom: 20px; }
-.service-detail ul { list-style: none; margin: 20px 0; }
-.service-detail ul li { background: var(--card); padding: 15px; margin: 10px 0; border-radius: 10px; border-right: 3px solid var(--main); }
+    .service-detail { display: none; padding: 150px 20px 100px; }
+    .service-detail.active { display: block; animation: fadeUp 0.5s; }
+    .back-btn { margin-bottom: 30px; background: transparent; border: 1px solid var(--main); }
+    .service-detail h2 { font-size: 40px; color: var(--main-light); margin-bottom: 20px; }
+    .service-detail ul { list-style: none; margin: 20px 0; }
+    .service-detail ul li { background: var(--card); padding: 15px; margin: 10px 0; border-radius: 10px; border-right: 3px solid var(--main); }
 
     footer { padding: 60px 20px; border-top: 1px solid rgba(139,92,246,0.2); text-align: center; }
 
     @media(max-width: 768px) {
-  .grid,.stats-grid,.about-content { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 42px; }
-  .logo-text { font-size: 24px; }
-  .nav-buttons { gap: 8px; }
-  .btn { padding: 8px 16px; font-size: 13px; }
-  .testi-card { min-width: 300px; }
-  .floating-btns { bottom: 20px; left: 20px; }
-  .float-btn { width: 55px; height: 55px; font-size: 26px; }
-  .hero { min-height: 600px; padding: 160px 20px 80px; }
-  .hero-video { display: none; }
-  .hero { background: url('https://karempr86-oss.github.io/Magiclean/hero1.jpg') center/cover no-repeat; }
+      .grid,.stats-grid,.about-content { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 42px; }
+      .logo-text { font-size: 24px; }
+      .nav-buttons { gap: 8px; }
+      .btn { padding: 8px 16px; font-size: 13px; }
+      .testi-card { min-width: 300px; }
+      .floating-btns { bottom: 20px; left: 20px; }
+      .float-btn { width: 55px; height: 55px; font-size: 26px; }
+      .hero { min-height: 600px; padding: 160px 20px 80px; }
+      .hero-video { display: none; }
+      .hero { background: url('https://karempr86-oss.github.io/Magiclean/hero1.jpg') center/cover no-repeat; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ازرار عائمة -->
   <div class="floating-btns">
     <a href="https://wa.me/201032990659?text=مرحبا ماجيك كلين عايز استفسر عن الخدمات" target="_blank" class="float-btn whatsapp-btn">💬</a>
     <a href="tel:01032990659" class="float-btn call-btn">📞</a>
@@ -171,9 +137,7 @@
 
   <header>
     <div class="container nav">
-      <div class="logo-text" onclick="showHome()">
-        MagicClean
-      </div>
+      <div class="logo-text" onclick="showHome()">MagicClean</div>
       <div class="nav-buttons">
         <a href="#about" class="btn btn-outline">من نحن</a>
         <a href="https://wa.me/201032990659" class="btn">اطلب الان</a>
@@ -182,7 +146,6 @@
   </header>
 
   <div id="home">
-    <!-- HERO بفيديو -->
     <section class="hero">
       <video class="hero-video" autoplay muted loop playsinline>
         <source src="https://karempr86-oss.github.io/Magiclean/bg.mp4" type="video/mp4">
@@ -238,21 +201,9 @@
       <div class="container">
         <h2>اراء عملائنا</h2>
         <div class="testi-slider">
-          <div class="testi-card">
-            <div class="stars">★★★</div>
-            <p>"بصراحة افضل شركة تنظيف اتعاملت معاها. الفريق محترم جدا والشغل نضيف 100%"</p>
-            <div class="name" style="color:var(--main-light); font-weight:700;">- احمد محمد</div>
-          </div>
-          <div class="testi-card">
-            <div class="stars">★★★</div>
-            <p>"خدمة رعاية المسنين ممتازة. الممرضة كانت قمة في الذوق والاهتمام بوالدتي"</p>
-            <div class="name" style="color:var(--main-light); font-weight:700;">- سارة علي</div>
-          </div>
-          <div class="testi-card">
-            <div class="stars">★★★</div>
-            <p>"جربت خدمة تنظيف الانتريهات والنتيجة كانت مبهرة. رجع جديد كأنه لسه شاريه"</p>
-            <div class="name" style="color:var(--main-light); font-weight:700;">- محمود حسن</div>
-          </div>
+          <div class="testi-card"><div class="stars">★★★★★</div><p>"بصراحة افضل شركة تنظيف اتعاملت معاها. الفريق محترم جدا والشغل نضيف 100%"</p><div class="name" style="color:var(--main-light); font-weight:700;">- احمد محمد</div></div>
+          <div class="testi-card"><div class="stars">★★★★★</div><p>"خدمة رعاية المسنين ممتازة. الممرضة كانت قمة في الذوق والاهتمام بوالدتي"</p><div class="name" style="color:var(--main-light); font-weight:700;">- سارة علي</div></div>
+          <div class="testi-card"><div class="stars">★★★★★</div><p>"جربت خدمة تنظيف الانتريهات والنتيجة كانت مبهرة. رجع جديد كأنه لسه شاريه"</p><div class="name" style="color:var(--main-light); font-weight:700;">- محمود حسن</div></div>
         </div>
       </div>
     </section>
@@ -260,99 +211,23 @@
     <section class="map" id="map">
       <div class="container">
         <h2>موقعنا</h2>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.0!2d31.2405!3d30.1345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145836!2sShubra%20El%20Kheima!5e0!3m2!1sar!2seg!4v1!5m2!1sar!2seg"
-          allowfullscreen=""
-          loading="lazy">
-        </iframe>
-        <p style="text-align:center; margin-top:20px;">
-          <a href="https://maps.app.goo.gl/bE5yPe71yxWhm2oNA?g_st=ac" target="_blank" class="btn">افتح في خرائط جوجل</a>
-        </p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.0!2d31.2405!3d30.1345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145836!2sShubra%20El%20Kheima!5e0!3m2!1sar!2seg!4v1!5m2!1sar!2seg" allowfullscreen="" loading="lazy"></iframe>
+        <p style="text-align:center; margin-top:20px;"><a href="https://maps.app.goo.gl/bE5yPe71yxWhm2oNA?g_st=ac" target="_blank" class="btn">افتح في خرائط جوجل</a></p>
       </div>
     </section>
   </div>
 
-  <!-- صفحات الخدمات -->
-  <div id="service-cleaning" class="service-detail">
-    <div class="container">
-      <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
-      <h2>🏠 تنظيف منازل شامل</h2>
-      <p style="font-size:18px; line-height:1.9; margin:20px 0;">بنرجع بيتك جديد في 3 ساعات. فريق محترف بزي موحد ومعدات مستوردة ومواد معتمدة من وزارة الصحة.</p>
-      <h3 style="color:var(--accent); margin-top:30px;">الخدمة تشمل:</h3>
-      <ul>
-        <li>✓ تنظيف الغرف والصالات والطرقات بالكامل</li>
-        <li>✓ تنظيف وتعقيم المطبخ والحمامات</li>
-        <li>✓ تلميع الزجاج والشبابيك والالوميتال</li>
-        <li>✓ شفط الاتربة من السجاد والكنب</li>
-        <li>✓ مسح الارضيات وتعطير المكان</li>
-      </ul>
-      <a href="https://wa.me/201032990659?text=عايز اطلب خدمة تنظيف منازل" class="btn">اطلب الخدمة الان على واتساب</a>
-    </div>
-  </div>
+  <div id="service-cleaning" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>🏠 تنظيف منازل شامل</h2><p style="font-size:18px; line-height:1.9; margin:20px 0;">بنرجع بيتك جديد في 3 ساعات.</p><a href="https://wa.me/201032990659?text=عايز اطلب خدمة تنظيف منازل" class="btn">اطلب الخدمة الان على واتساب</a></div></div>
+  <div id="service-sofa" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>🛋️ تنظيف انتريهات ومراتب بالبخار</h2><a href="https://wa.me/201032990659?text=عايز اطلب خدمة تنظيف انتريهات" class="btn">اطلب الخدمة الان على واتساب</a></div></div>
+  <div id="service-babysitter" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>👶 رعاية اطفال "بي سيتر"</h2><a href="https://wa.me/201032990659?text=عايز اطلب خدمة رعاية اطفال" class="btn">اطلب الخدمة الان على واتساب</a></div></div>
+  <div id="service-elderly" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>👴 رعاية مسنين</h2><a href="https://wa.me/201032990659?text=عايز اطلب خدمة رعاية مسنين" class="btn">اطلب الخدمة الان على واتساب</a></div></div>
+  <div id="service-cooking" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>👨‍🍳 خدمة الطبخ المنزلي</h2><a href="https://wa.me/201032990659?text=عايز اطلب خدمة الطبخ" class="btn">اطلب الخدمة الان على واتساب</a></div></div>
+  <div id="service-pest" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>🐜 مكافحة الحشرات</h2><a href="https://wa.me/201032990659?text=عايز اطلب خدمة مكافحة الحشرات" class="btn">اطلب الخدمة الان على واتساب</a></div></div>
+  <div id="service-nursing" class="service-detail"><div class="container"><button class="btn back-btn" onclick="showHome()">← الرجوع</button><h2>🩺 تمريض منزلي</h2><a href="https://wa.me/201032990659?text=عايز اطلب خدمة تمريض منزلي" class="btn">اطلب الخدمة الان على واتساب</a></div></div>
 
-  <div id="service-sofa" class="service-detail">
-    <div class="container">
-      <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
-      <h2>🛋️ تنظيف انتريهات ومراتب بالبخار</h2>
-      <p style="font-size:18px; line-height:1.9; margin:20px 0;">بنستخدم احدث ماكينات البخار الالماني لشفط البقع العميقة.</p>
-      <a href="https://wa.me/201032990659?text=عايز اطلب خدمة تنظيف انتريهات" class="btn">اطلب الخدمة الان على واتساب</a>
-    </div>
-  </div>
-
-  <div id="service-babysitter" class="service-detail">
-    <div class="container">
-      <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
-      <h2>👶 رعاية اطفال "بي سيتر"</h2>
-      <p style="font-size:18px; line-height:1.9; margin:20px 0;">بنوفر بي سيتر مدربات وامينات للرعاية باطفالك من عمر يوم لـ 12 سنة.</p>
-      <a href="https://wa.me/201032990659?text=عايز اطلب خدمة رعاية اطفال" class="btn">اطلب الخدمة الان على واتساب</a>
-    </div>
-  </div>
-
-  <div id="service-elderly" class="service-detail">
-    <div class="container">
-      <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
-      <h2>👴 رعاية مسنين</h2>
-      <p style="font-size:18px; line-height:1.9; margin:20px 0;">رعاية طبية واهتمام بكبار السن 24 ساعة.</p>
-      <a href="https://wa.me/201032990659?text=عايز اطلب خدمة رعاية مسنين" class="btn">اطلب الخدمة الان على واتساب</a>
-    </div>
-  </div>
-
-  <div id="service-cooking" class="service-detail">
-    <div class="container">
-      <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
-      <h2>👨‍🍳 خدمة الطبخ المنزلي</h2>
-      <p style="font-size:18px; line-height:1.9; margin:20px 0;">شيفات منزلية محترفات. بنطبخ في بيتك او بنوصل لك الاكل جاهز.</p>
-      <a href="https://wa.me/201032990659?text=عايز اطلب خدمة الطبخ" class="btn">اطلب الخدمة الان على واتساب</a>
-    </div>
-  </div>
-
-  <div id="service-pest" class="service-detail">
-    <div class="container">
-      <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
-      <h2>🐜 مكافحة الحشرات</h2>
-      <p style="font-size:18px; line-height:1.9; margin:20px 0;">بنقضي على جميع انواع الحشرات بمواد مستوردة بدون ريحة. ضمان سنة كاملة.</p>
-      <a href="https://wa.me/201032990659?text=عايز اطلب خدمة مكافحة الحشرات" class="btn">اطلب الخدمة الان على واتساب</a>
-    </div>
-  </div>
-
-  <div id="service-nursing" class="service-detail">
-    <div class="container">
-      <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
-      <h2>🩺 تمريض منزلي</h2>
-      <p style="font-size:18px; line-height:1.9; margin:20px 0;">ممرضين وممرضات معتمدين من وزارة الصحة.</p>
-      <a href="https://wa.me/201032990659?text=عايز اطلب خدمة تمريض منزلي" class="btn">اطلب الخدمة الان على واتساب</a>
-    </div>
-  </div>
-
-  <footer>
-    <div class="container">
-      <p>رقم الهاتف: <a href="tel:01032990659" style="color:var(--main-light);">01032990659</a> | واتساب: <a href="https://wa.me/201032990659" style="color:var(--main-light);">01032990659</a></p>
-      <p style="margin-top:15px;">© 2026 MagicClean For Public Services</p>
-    </div>
-  </footer>
+  <footer><div class="container"><p>رقم الهاتف: <a href="tel:01032990659" style="color:var(--main-light);">01032990659</a> | واتساب: <a href="https://wa.me/201032990659" style="color:var(--main-light);">01032990659</a></p><p style="margin-top:15px;">© 2026 MagicClean For Public Services</p></div></footer>
 
   <script>
-    // Typing Effect
     const text = "نظافة... تليق بك";
     let i = 0;
     function typing() {
@@ -378,4 +253,4 @@
   </script>
 
 </body>
-</html>
+  </html>
