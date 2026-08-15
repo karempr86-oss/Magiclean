@@ -87,13 +87,16 @@
     }
 .hero-video {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
       z-index: 0;
       filter: brightness(0.6);
+      object-fit: cover;
     }
 .hero::after {
       content: '';
@@ -274,7 +277,15 @@
     <div class="container">
       <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
       <h2>🏠 تنظيف منازل شامل</h2>
-      <p style="font-size:18px; line-height:1.9; margin:20px 0;">بنرجع بيتك جديد في 3 ساعات.</p>
+      <p style="font-size:18px; line-height:1.9; margin:20px 0;">بنرجع بيتك جديد في 3 ساعات. فريق محترف بزي موحد ومعدات مستوردة ومواد معتمدة من وزارة الصحة.</p>
+      <h3 style="color:var(--accent); margin-top:30px;">الخدمة تشمل:</h3>
+      <ul>
+        <li>✓ تنظيف الغرف والصالات والطرقات بالكامل</li>
+        <li>✓ تنظيف وتعقيم المطبخ والحمامات</li>
+        <li>✓ تلميع الزجاج والشبابيك والالوميتال</li>
+        <li>✓ شفط الاتربة من السجاد والكنب</li>
+        <li>✓ مسح الارضيات وتعطير المكان</li>
+      </ul>
       <a href="https://wa.me/201032990659?text=عايز اطلب خدمة تنظيف منازل" class="btn">اطلب الخدمة الان على واتساب</a>
     </div>
   </div>
@@ -283,6 +294,7 @@
     <div class="container">
       <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
       <h2>🛋️ تنظيف انتريهات ومراتب بالبخار</h2>
+      <p style="font-size:18px; line-height:1.9; margin:20px 0;">بنستخدم احدث ماكينات البخار الالماني لشفط البقع العميقة.</p>
       <a href="https://wa.me/201032990659?text=عايز اطلب خدمة تنظيف انتريهات" class="btn">اطلب الخدمة الان على واتساب</a>
     </div>
   </div>
@@ -291,6 +303,7 @@
     <div class="container">
       <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
       <h2>👶 رعاية اطفال "بي سيتر"</h2>
+      <p style="font-size:18px; line-height:1.9; margin:20px 0;">بنوفر بي سيتر مدربات وامينات للرعاية باطفالك من عمر يوم لـ 12 سنة.</p>
       <a href="https://wa.me/201032990659?text=عايز اطلب خدمة رعاية اطفال" class="btn">اطلب الخدمة الان على واتساب</a>
     </div>
   </div>
@@ -299,6 +312,7 @@
     <div class="container">
       <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
       <h2>👴 رعاية مسنين</h2>
+      <p style="font-size:18px; line-height:1.9; margin:20px 0;">رعاية طبية واهتمام بكبار السن 24 ساعة.</p>
       <a href="https://wa.me/201032990659?text=عايز اطلب خدمة رعاية مسنين" class="btn">اطلب الخدمة الان على واتساب</a>
     </div>
   </div>
@@ -307,6 +321,7 @@
     <div class="container">
       <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
       <h2>👨‍🍳 خدمة الطبخ المنزلي</h2>
+      <p style="font-size:18px; line-height:1.9; margin:20px 0;">شيفات منزلية محترفات. بنطبخ في بيتك او بنوصل لك الاكل جاهز.</p>
       <a href="https://wa.me/201032990659?text=عايز اطلب خدمة الطبخ" class="btn">اطلب الخدمة الان على واتساب</a>
     </div>
   </div>
@@ -315,6 +330,7 @@
     <div class="container">
       <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
       <h2>🐜 مكافحة الحشرات</h2>
+      <p style="font-size:18px; line-height:1.9; margin:20px 0;">بنقضي على جميع انواع الحشرات بمواد مستوردة بدون ريحة. ضمان سنة كاملة.</p>
       <a href="https://wa.me/201032990659?text=عايز اطلب خدمة مكافحة الحشرات" class="btn">اطلب الخدمة الان على واتساب</a>
     </div>
   </div>
@@ -323,6 +339,7 @@
     <div class="container">
       <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
       <h2>🩺 تمريض منزلي</h2>
+      <p style="font-size:18px; line-height:1.9; margin:20px 0;">ممرضين وممرضات معتمدين من وزارة الصحة.</p>
       <a href="https://wa.me/201032990659?text=عايز اطلب خدمة تمريض منزلي" class="btn">اطلب الخدمة الان على واتساب</a>
     </div>
   </div>
