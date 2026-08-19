@@ -7,29 +7,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #070714;
-      --card: #101025;
-      --main: #8B5CF6;
-      --main-light: #A78BFA;
-      --accent: #FACC15;
-      --text: #E5E7EB;
-      --whatsapp: #25D366;
+      --bg: #070714; --card: #101025; --main: #8B5CF6; --main-light: #A78BFA; 
+      --accent: #FACC15; --text: #E5E7EB; --whatsapp: #25D366;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body { font-family: 'Cairo', sans-serif; background: var(--bg); color: var(--text); }
     body::before { content: ''; position: fixed; width: 100%; height: 100%; background: radial-gradient(circle at 30% 20%, rgba(139, 92, 246, 0.2) 0%, transparent 50%); z-index: -1; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } }
     @keyframes glow { 0%,100% { text-shadow: 0 0 10px rgba(139,92,246,0.5); } 50% { text-shadow: 0 0 25px rgba(139,92,246,0.9); } }
-    .cursor { display: inline-block; width: 3px; background: var(--accent); animation: blink 1s infinite; }
     @keyframes blink { 50% { opacity: 0; } }
+    .cursor { display: inline-block; width: 3px; background: var(--accent); animation: blink 1s infinite; }
 
     header { padding: 20px 0; position: fixed; width: 100%; top: 0; background: rgba(7,7,20,0.8); backdrop-filter: blur(15px); z-index: 100; border-bottom: 1px solid rgba(139,92,246,0.1); }
     .nav { display: flex; justify-content: space-between; align-items: center; }
-    .logo-text { font-size: 32px; font-weight: 900; background: linear-gradient(90deg, #A78BFA, #FACC15); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: glow 3s ease-in-out infinite; cursor: pointer; letter-spacing: 1px; }
+    .logo-text { font-size: 32px; font-weight: 900; background: linear-gradient(90deg, #A78BFA, #FACC15); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: glow 3s ease-in-out infinite; cursor: pointer; }
     .nav-buttons { display: flex; gap: 12px; align-items: center; }
     .btn { background: linear-gradient(90deg, #7C3AED, #8B5CF6); color: white; padding: 10px 22px; border-radius: 50px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; display: inline-block; font-size: 15px; }
     .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(139,92,246,0.5); }
@@ -42,8 +36,7 @@
     .whatsapp-btn { background: var(--whatsapp); }
     .call-btn { background: var(--main); animation-delay: 0.5s; }
 
-    .hero { padding: 200px 20px 120px; text-align: center; position: relative; overflow: hidden; min-height: 700px; display: flex; align-items: center; justify-content: center; }
-    .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; filter: brightness(0.5); }
+    .hero { padding: 200px 20px 120px; text-align: center; position: relative; overflow: hidden; min-height: 700px; display: flex; align-items: center; justify-content: center; background: url('hero.jpg') center/cover no-repeat; filter: brightness(0.9); }
     .hero::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(7,7,20,0.85) 0%, rgba(7,7,20,0.6) 50%, rgba(7,7,20,0.85) 100%); z-index: 1; }
     .hero-content { position: relative; z-index: 2; }
     .hero h1 { font-size: 65px; font-weight: 900; background: linear-gradient(90deg, #A78BFA, #FACC15); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -82,14 +75,9 @@
     .service-detail h2 { font-size: 40px; color: var(--main-light); margin-bottom: 20px; }
     .service-detail ul { list-style: none; margin: 20px 0; }
     .service-detail ul li { background: var(--card); padding: 15px; margin: 10px 0; border-radius: 10px; border-right: 3px solid var(--main); }
-
-    /* جديد: تنسيق فيديو الخدمة */
-    .service-video {
-      width: 100%;
-      border-radius: 20px;
-      margin: 30px 0;
-      box-shadow: 0 0 40px rgba(139,92,246,0.3);
-    }
+    
+    /* جديد: فيديو الخدمة */
+    .service-video { width: 100%; border-radius: 20px; margin: 30px 0; box-shadow: 0 0 40px rgba(139,92,246,0.3); }
 
     footer { padding: 60px 20px; border-top: 1px solid rgba(139,92,246,0.2); text-align: center; }
 
@@ -125,9 +113,6 @@
 
   <div id="home">
     <section class="hero">
-      <video autoplay muted loop playsinline class="hero-video">
-        <source src="hero-video.mp4" type="video/mp4">
-      </video>
       <div class="container hero-content">
         <h1>Magic Clean</h1>
         <p class="subtitle"><span id="typing"></span><span class="cursor"></span></p>
@@ -151,6 +136,8 @@
         <div class="about-content">
           <div class="about-text">
             <p><strong style="color:var(--main-light);">MagicClean</strong> شركة رائدة في مجال الخدمات المنزلية في مصر منذ اكتر من 15 سنة.</p>
+            <p>مهمتنا اننا نوفرلك حياة اسهل وانضف. بنقدم فريق محترف ومدرب على اعلى مستوى + احدث المعدات + مواد تنظيف امنة 100%.</p>
+            <p>بنخدم اكتر من 5000 عميل وهدفنا رضاك هو اولويتنا. "نظافة... تليق بك"</p>
             <a href="https://wa.me/201032990659" class="btn">تواصل معنا</a>
           </div>
           <img src="https://karempr86-oss.github.io/Magiclean/hero1.jpg" alt="About Magic Clean" class="about-img">
@@ -172,6 +159,25 @@
         </div>
       </div>
     </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <h2>اراء عملائنا</h2>
+        <div class="testi-slider">
+          <div class="testi-card"><div class="stars">★★★</div><p>"بصراحة افضل شركة تنظيف اتعاملت معاها"</p><div class="name" style="color:var(--main-light); font-weight:700;">- احمد محمد</div></div>
+          <div class="testi-card"><div class="stars">★★★</div><p>"خدمة رعاية المسنين ممتازة"</p><div class="name" style="color:var(--main-light); font-weight:700;">- سارة علي</div></div>
+          <div class="testi-card"><div class="stars">★★★</div><p>"جربت خدمة تنظيف الانتريهات والنتيجة كانت مبهرة"</p><div class="name" style="color:var(--main-light); font-weight:700;">- محمود حسن</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="map" id="map">
+      <div class="container">
+        <h2>موقعنا</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.0!2d31.2405!3d30.1345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145836!2sShubra%20El%20Kheima!5e0!3m2!1sar!2seg!4v1!5m2!1sar!2seg" allowfullscreen="" loading="lazy"></iframe>
+        <p style="text-align:center; margin-top:20px;"><a href="https://maps.app.goo.gl/bE5yPe71yxWhm2oNA?g_st=ac" target="_blank" class="btn">افتح في خرائط جوجل</a></p>
+      </div>
+    </section>
   </div>
 
   <!-- صفحات الخدمات بالفيديو -->
@@ -179,17 +185,10 @@
     <div class="container">
       <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
       <h2>🏠 تنظيف منازل شامل</h2>
-      
-      <video controls class="service-video">
-        <source src="cleaning-video.mp4" type="video/mp4">
-      </video>
-
-      <p style="font-size:18px; line-height:1.9; margin:20px 0;">بنرجع بيتك جديد في 3 ساعات. فريق محترف بزي موحد ومعدات مستوردة.</p>
+      <video autoplay muted loop playsinline class="service-video"><source src="cleaning-video.mp4" type="video/mp4"></video>
+      <p style="font-size:18px; line-height:1.9; margin:20px 0;">بنرجع بيتك جديد في 3 ساعات. فريق محترف بزي موحد ومعدات مستوردة ومواد معتمدة من وزارة الصحة.</p>
       <h3 style="color:var(--accent); margin-top:30px;">الخدمة تشمل:</h3>
-      <ul>
-        <li>✓ تنظيف الغرف والصالات والطرقات بالكامل</li>
-        <li>✓ تنظيف وتعقيم المطبخ والحمامات</li>
-      </ul>
+      <ul><li>✓ تنظيف الغرف والصالات والطرقات بالكامل</li><li>✓ تنظيف وتعقيم المطبخ والحمامات</li><li>✓ تلميع الزجاج والشبابيك</li></ul>
       <a href="https://wa.me/201032990659?text=عايز اطلب خدمة تنظيف منازل" class="btn">اطلب الخدمة الان على واتساب</a>
     </div>
   </div>
@@ -198,11 +197,7 @@
     <div class="container">
       <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
       <h2>🛋️ تنظيف انتريهات ومراتب بالبخار</h2>
-      
-      <video controls class="service-video">
-        <source src="sofa-video.mp4" type="video/mp4">
-      </video>
-
+      <video autoplay muted loop playsinline class="service-video"><source src="sofa-video.mp4" type="video/mp4"></video>
       <p style="font-size:18px; line-height:1.9; margin:20px 0;">بنستخدم احدث ماكينات البخار الالماني لشفط البقع العميقة.</p>
       <a href="https://wa.me/201032990659?text=عايز اطلب خدمة تنظيف انتريهات" class="btn">اطلب الخدمة الان على واتساب</a>
     </div>
@@ -212,12 +207,8 @@
     <div class="container">
       <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
       <h2>👶 رعاية اطفال "بي سيتر"</h2>
-      
-      <video controls class="service-video">
-        <source src="babysitter-video.mp4" type="video/mp4">
-      </video>
-
-      <p style="font-size:18px; line-height:1.9; margin:20px 0;">بنوفر بي سيتر مدربات وامينات للرعاية باطفالك.</p>
+      <video autoplay muted loop playsinline class="service-video"><source src="babysitter-video.mp4" type="video/mp4"></video>
+      <p style="font-size:18px; line-height:1.9; margin:20px 0;">بنوفر بي سيتر مدربات وامينات للرعاية باطفالك من عمر يوم لـ 12 سنة.</p>
       <a href="https://wa.me/201032990659?text=عايز اطلب خدمة رعاية اطفال" class="btn">اطلب الخدمة الان على واتساب</a>
     </div>
   </div>
@@ -226,12 +217,8 @@
     <div class="container">
       <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
       <h2>👴 رعاية مسنين</h2>
-      
-      <video controls class="service-video">
-        <source src="elderly-video.mp4" type="video/mp4">
-      </video>
-
-      <p style="font-size:18px; line-height:1.9; margin:20px 0;">رعاية طبية واهتمام بكبار السن 24 ساعة.</p>
+      <video autoplay muted loop playsinline class="service-video"><source src="elderly-video.mp4" type="video/mp4"></video>
+      <p style="font-size:18px; line-height:1.9; margin:20px 0;">رعاية طبية واهتمام بكبار السن 24 ساعة. مرافقات وممرضات متخصصات.</p>
       <a href="https://wa.me/201032990659?text=عايز اطلب خدمة رعاية مسنين" class="btn">اطلب الخدمة الان على واتساب</a>
     </div>
   </div>
@@ -240,11 +227,7 @@
     <div class="container">
       <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
       <h2>👨‍🍳 خدمة الطبخ المنزلي</h2>
-      
-      <video controls class="service-video">
-        <source src="cooking-video.mp4" type="video/mp4">
-      </video>
-
+      <video autoplay muted loop playsinline class="service-video"><source src="cooking-video.mp4" type="video/mp4"></video>
       <p style="font-size:18px; line-height:1.9; margin:20px 0;">شيفات منزلية محترفات. بنطبخ في بيتك او بنوصل لك الاكل جاهز.</p>
       <a href="https://wa.me/201032990659?text=عايز اطلب خدمة الطبخ" class="btn">اطلب الخدمة الان على واتساب</a>
     </div>
@@ -254,12 +237,8 @@
     <div class="container">
       <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
       <h2>🐜 مكافحة الحشرات</h2>
-      
-      <video controls class="service-video">
-        <source src="pest-video.mp4" type="video/mp4">
-      </video>
-
-      <p style="font-size:18px; line-height:1.9; margin:20px 0;">بنقضي على جميع انواع الحشرات بمواد مستوردة بدون ريحة.</p>
+      <video autoplay muted loop playsinline class="service-video"><source src="pest-video.mp4" type="video/mp4"></video>
+      <p style="font-size:18px; line-height:1.9; margin:20px 0;">بنقضي على جميع انواع الحشرات بمواد مستوردة بدون ريحة. ضمان سنة كاملة.</p>
       <a href="https://wa.me/201032990659?text=عايز اطلب خدمة مكافحة الحشرات" class="btn">اطلب الخدمة الان على واتساب</a>
     </div>
   </div>
@@ -268,12 +247,8 @@
     <div class="container">
       <button class="btn back-btn" onclick="showHome()">← الرجوع</button>
       <h2>🩺 تمريض منزلي</h2>
-      
-      <video controls class="service-video">
-        <source src="nursing-video.mp4" type="video/mp4">
-      </video>
-
-      <p style="font-size:18px; line-height:1.9; margin:20px 0;">ممرضين وممرضات معتمدين من وزارة الصحة.</p>
+      <video autoplay muted loop playsinline class="service-video"><source src="nursing-video.mp4" type="video/mp4"></video>
+      <p style="font-size:18px; line-height:1.9; margin:20px 0;">ممرضين وممرضات معتمدين من وزارة الصحة. رعاية طبية كاملة في بيتك.</p>
       <a href="https://wa.me/201032990659?text=عايز اطلب خدمة تمريض منزلي" class="btn">اطلب الخدمة الان على واتساب</a>
     </div>
   </div>
@@ -286,17 +261,9 @@
   </footer>
 
   <script>
-    const text = "نظافة... تليق بك";
-    let i = 0;
-    function typing() {
-      if (i < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typing, 100);
-      }
-    }
+    const text = "نظافة... تليق بك"; let i = 0;
+    function typing() { if (i < text.length) { document.getElementById("typing").innerHTML += text.charAt(i); i++; setTimeout(typing, 100); } }
     typing();
-
     function showService(service) {
       document.getElementById('home').style.display = 'none';
       document.querySelectorAll('.service-detail').forEach(el => el.classList.remove('active'));
@@ -309,6 +276,5 @@
       window.scrollTo(0,0);
     }
   </script>
-
 </body>
 </html>
